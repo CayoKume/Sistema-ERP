@@ -1,0 +1,73 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConfiguraCboMargemLucro" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;5&lt;/string&gt;
+  &lt;string&gt;10&lt;/string&gt;
+  &lt;string&gt;15&lt;/string&gt;
+  &lt;string&gt;20&lt;/string&gt;
+  &lt;string&gt;25&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ConfiguraCboStatus" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Ativado&lt;/string&gt;
+  &lt;string&gt;Desativado&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ConfiguraCboMedidaEstoque" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;M² - Metro Quadrado&lt;/string&gt;
+  &lt;string&gt;Cm² - Centímetro Quadrado&lt;/string&gt;
+  &lt;string&gt;M - Metro&lt;/string&gt;
+  &lt;string&gt;Cm - Centímetro&lt;/string&gt;
+  &lt;string&gt;Un - Unidade&lt;/string&gt;
+  &lt;string&gt;Ct - Cartela&lt;/string&gt;
+  &lt;string&gt;Cx - Caixa&lt;/string&gt;
+  &lt;string&gt;Dz - Duzia&lt;/string&gt;
+  &lt;string&gt;Gs - Grosa&lt;/string&gt;
+  &lt;string&gt;Pa - Par&lt;/string&gt;
+  &lt;string&gt;Pç - Peça&lt;/string&gt;
+  &lt;string&gt;Pr - Par&lt;/string&gt;
+  &lt;string&gt;Pt - Pacote&lt;/string&gt;
+  &lt;string&gt;Rl - Rolo&lt;/string&gt;
+  &lt;string&gt;Kg - Kilo&lt;/string&gt;
+  &lt;string&gt;G - Grama&lt;/string&gt;
+  &lt;string&gt;Sc60 - Saca 60Kg&lt;/string&gt;
+  &lt;string&gt;L - Litro&lt;/string&gt;
+  &lt;string&gt;M³ - Metro Cúbico&lt;/string&gt;
+  &lt;string&gt;Ml - Mililitro&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ConfiguraCboMedidaCompra" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;M² - Metro Quadrado&lt;/string&gt;
+  &lt;string&gt;Cm² - Centímetro Quadrado&lt;/string&gt;
+  &lt;string&gt;M - Metro&lt;/string&gt;
+  &lt;string&gt;Cm - Centímetro&lt;/string&gt;
+  &lt;string&gt;Un - Unidade&lt;/string&gt;
+  &lt;string&gt;Ct - Cartela&lt;/string&gt;
+  &lt;string&gt;Cx - Caixa&lt;/string&gt;
+  &lt;string&gt;Dz - Duzia&lt;/string&gt;
+  &lt;string&gt;Gs - Grosa&lt;/string&gt;
+  &lt;string&gt;Pa - Par&lt;/string&gt;
+  &lt;string&gt;Pç - Peça&lt;/string&gt;
+  &lt;string&gt;Pr - Par&lt;/string&gt;
+  &lt;string&gt;Pt - Pacote&lt;/string&gt;
+  &lt;string&gt;Rl - Rolo&lt;/string&gt;
+  &lt;string&gt;Kg - Kilo&lt;/string&gt;
+  &lt;string&gt;G - Grama&lt;/string&gt;
+  &lt;string&gt;Sc60 - Saca 60Kg&lt;/string&gt;
+  &lt;string&gt;L - Litro&lt;/string&gt;
+  &lt;string&gt;M³ - Metro Cúbico&lt;/string&gt;
+  &lt;string&gt;Ml - Mililitro&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
