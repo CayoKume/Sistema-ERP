@@ -16,15 +16,13 @@ Public Class MedidaBLL
         Return retorno
     End Function
 
-    Public Function UpdateMedida(SQL As String, parametros As List(Of MySqlParameter)) As ArrayList Implements IMedida.UpdateMedida
+    Public Function UpdateMedida(medidaDTO As MedidaDTO) As ArrayList Implements IMedida.UpdateMedida
         Dim retorno As ArrayList
-        Dim conexao As New Conexao
+        Dim medidaDAL As New MedidaDAL
         Try
-            retorno = conexao.ExecuteQuery(SQL, parametros)
+            retorno = MedidaDAL.AlteraMedida(medidaDTO)
         Catch ex As Exception
             Throw New Exception(ex.Message)
-        Finally
-            conexao.CloseConn()
         End Try
 
         Return retorno

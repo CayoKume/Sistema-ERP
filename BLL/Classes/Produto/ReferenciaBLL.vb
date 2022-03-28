@@ -32,7 +32,7 @@ Public Class ReferenciaBLL
         Return retorno
     End Function
 
-    Public Function SelectReferencia(referenciaDTO As ReferenciaDTO) As DataTable Implements IReferencia.SelectReferencia
+    Public Function SelectReferencias(referenciaDTO As ReferenciaDTO) As DataTable Implements IReferencia.SelectReferencias
         Dim dt As New DataTable
         Dim referenciaDAL As New ReferenciaDAL
         Try
@@ -44,7 +44,7 @@ Public Class ReferenciaBLL
         Return dt
     End Function
 
-    Public Function SelectReferencias(referenciaDTO As ReferenciaDTO) As ArrayList Implements IReferencia.SelectReferencias
+    Public Function SelectReferencia(referenciaDTO As ReferenciaDTO) As ArrayList Implements IReferencia.SelectReferencia
         Throw New NotImplementedException()
     End Function
 

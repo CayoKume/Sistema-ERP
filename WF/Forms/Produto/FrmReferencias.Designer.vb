@@ -25,12 +25,12 @@ Partial Class FrmReferencias
         Me.lboReferencia = New System.Windows.Forms.Label()
         Me.txtReferencia = New System.Windows.Forms.TextBox()
         Me.cboCatalago = New System.Windows.Forms.ComboBox()
-        Me.lboCatalago = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvResultados = New System.Windows.Forms.DataGridView()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnCatalago = New System.Windows.Forms.Button()
+        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,23 +61,15 @@ Partial Class FrmReferencias
         Me.cboCatalago.Size = New System.Drawing.Size(179, 21)
         Me.cboCatalago.TabIndex = 2
         '
-        'lboCatalago
+        'dgvResultados
         '
-        Me.lboCatalago.AutoSize = True
-        Me.lboCatalago.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lboCatalago.Location = New System.Drawing.Point(12, 40)
-        Me.lboCatalago.Name = "lboCatalago"
-        Me.lboCatalago.Size = New System.Drawing.Size(54, 16)
-        Me.lboCatalago.TabIndex = 3
-        Me.lboCatalago.Text = "Catálago"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 65)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(297, 225)
-        Me.DataGridView1.TabIndex = 4
+        Me.dgvResultados.AllowUserToAddRows = False
+        Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvResultados.Location = New System.Drawing.Point(15, 65)
+        Me.dgvResultados.Name = "dgvResultados"
+        Me.dgvResultados.RowTemplate.ReadOnly = True
+        Me.dgvResultados.Size = New System.Drawing.Size(297, 225)
+        Me.dgvResultados.TabIndex = 4
         '
         'BtnSalvar
         '
@@ -106,14 +98,23 @@ Partial Class FrmReferencias
         Me.Panel1.Size = New System.Drawing.Size(161, 24)
         Me.Panel1.TabIndex = 7
         '
+        'btnCatalago
+        '
+        Me.btnCatalago.Location = New System.Drawing.Point(15, 36)
+        Me.btnCatalago.Name = "btnCatalago"
+        Me.btnCatalago.Size = New System.Drawing.Size(75, 23)
+        Me.btnCatalago.TabIndex = 8
+        Me.btnCatalago.Text = "Catálagos"
+        Me.btnCatalago.UseVisualStyleBackColor = True
+        '
         'FrmReferencias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(331, 331)
+        Me.Controls.Add(Me.btnCatalago)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.lboCatalago)
+        Me.Controls.Add(Me.dgvResultados)
         Me.Controls.Add(Me.cboCatalago)
         Me.Controls.Add(Me.txtReferencia)
         Me.Controls.Add(Me.lboReferencia)
@@ -121,7 +122,7 @@ Partial Class FrmReferencias
         Me.Name = "FrmReferencias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Referencias"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -131,9 +132,9 @@ Partial Class FrmReferencias
     Friend WithEvents lboReferencia As Label
     Friend WithEvents txtReferencia As TextBox
     Friend WithEvents cboCatalago As ComboBox
-    Friend WithEvents lboCatalago As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvResultados As DataGridView
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnVoltar As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnCatalago As Button
 End Class

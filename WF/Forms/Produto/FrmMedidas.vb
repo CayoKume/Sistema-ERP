@@ -48,16 +48,31 @@ Public Class FrmMedidas
         medidaDTO.ComprimentoProduto = Comprimento
         medidaDTO.VolumeProduto = Volume
 
-        Dim medidaBLL As New MedidaBLL
-        Try
-            If medidaBLL.InsertMedida(medidaDTO)(1) = True Then
-                MessageBox.Show("Medida cadastrada com sucesso!")
-            Else
-                MessageBox.Show("Problema ao cadastrar medida!.")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        If FrmProdutos.IdMedidaProduto <> Nothing Then
+            medidaDTO.IdProdutoProduto = FrmProdutos.IdMedidaProduto
+
+            Dim medidaBLL As New MedidaBLL
+            Try
+                If medidaBLL.UpdateMedida(medidaDTO)(1) = True Then
+                    MessageBox.Show("Medida atualizada com sucesso!")
+                Else
+                    MessageBox.Show("Problema ao atualizar medida!.")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Dim medidaBLL As New MedidaBLL
+            Try
+                If medidaBLL.InsertMedida(MedidaDTO)(1) = True Then
+                    MessageBox.Show("Medida cadastrada com sucesso!")
+                Else
+                    MessageBox.Show("Problema ao cadastrar medida!.")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub btnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
@@ -82,9 +97,9 @@ Public Class FrmMedidas
         TrataVariavel()
         If FrmProdutos.txtCodigo.Text <> "" Then
             Dim medidaDTO As New MedidaDTO
-            medidaDTO.IdMedida = FrmProdutos.IdMedidaProduto
-            Dim medidaBLL As New MedidaBLL
+            medidaDTO.IdProdutoProduto = FrmProdutos.IdMedidaProduto
 
+            Dim medidaBLL As New MedidaBLL
             Try
                 If medidaBLL.SelectMedida(medidaDTO) IsNot Nothing Then
                     For i = 0 To cboMedidaCompra.Items.Count - 1
@@ -196,4 +211,5 @@ Public Class FrmMedidas
         End If
     End Sub
 #End Region
+
 End Class

@@ -31,7 +31,6 @@ Public Class FrmProdutos
 #Region "BOTÕES"
 
 #Region "MENU-STRIP"
-    'BOTÕES PRESENTES NO MENU SUPERIOR QUE MOSTRAM OUTRAS TELAS
     Private Sub ServiçosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiçosToolStripMenuItem.Click
         Me.Close()
         FrmServicos.Show()
@@ -55,7 +54,6 @@ Public Class FrmProdutos
 #End Region
 
 #Region "FORMULÁRIO"
-    'BOTÕES PRESENTES NO FORMULÁRIO QUE MOSTRAM OUTRAS TELAS
     Private Sub BtnFornecedores_Click(sender As Object, e As EventArgs) Handles BtnFornecedores.Click
         FrmFornecedoresMultiplos.Show()
     End Sub
@@ -90,7 +88,6 @@ Public Class FrmProdutos
 #End Region
 
 #Region "INFERIORES"
-    'Botões presentes no formulário na parte inferior que adicionam, removem ou exibem dados cadastrados no banco de dados.
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         TrataVariavel()
         Dim produtoDTO As New ProdutoDTO
@@ -216,6 +213,17 @@ Public Class FrmProdutos
                     txtObservacoes.Text = produtoDTO.ObservacoesProduto
                     cboTipoProduto.SelectedIndex = cboTipoProduto.FindStringExact(produtoDTO.CodigoTipoProduto)
                     cboCategoria.SelectedIndex = cboCategoria.FindStringExact(produtoDTO.CodigoCategoriaProduto)
+                    IdMedidaProduto = produtoDTO.IdMedidaProduto
+
+                    Dim medidaDTO As New MedidaDTO
+                    medidaDTO.IdProdutoProduto = IdMedidaProduto
+                    Dim medidaBLL As New MedidaBLL
+                    medidaBLL.SelectMedida(medidaDTO)
+                    txtUnidade.Text = medidaDTO.UnidadeMedidaEstoqueProduto
+                    txtAltura.Text = medidaDTO.AlturaProduto
+                    txtLargura.Text = medidaDTO.LarguraProduto
+                    txtComprimento.Text = medidaDTO.ComprimentoProduto
+                    txtPeso.Text = medidaDTO.PesoUnitarioProduto
                 End If
             Else
                     MessageBox.Show("Produto não cadastrado")

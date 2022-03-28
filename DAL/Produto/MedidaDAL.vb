@@ -75,6 +75,30 @@ Public Class MedidaDAL
         Return retorno
     End Function
 
+    Public Function AlteraMedida(medidaDTO As MedidaDTO) As ArrayList
+        Dim conexao As New Conexao
+        Dim retorno As ArrayList
+        Dim parram As New List(Of MySqlParameter)
+        Dim SQL As String
+
+        Try
+            SQL = Nothing
+            SQL = SQL + " UPDATE MEDIDA_PRODUTO SET unidade_medida_compra = '" & medidaDTO.UnidadeMedidaCompraProduto & "', unidade_medida_estoque = '" & medidaDTO.UnidadeMedidaEstoqueProduto & "', qtde_caixa = '" & medidaDTO.QtdeCaixaProduto & "',"
+            SQL = SQL + " taxa_conversao = '" & medidaDTO.TaxaConversaoProduto & "', peso_unitario = '" & medidaDTO.PesoUnitarioProduto & "', kilo_caixa = '" & medidaDTO.KiloCaixaProduto & "', altura_produto = '" & medidaDTO.AlturaProduto & "',"
+            SQL = SQL + " largura_produto = '" & medidaDTO.LarguraProduto & "', comprimento_produto = '" & medidaDTO.ComprimentoProduto & "', volume_produto = '" & medidaDTO.VolumeProduto & "'"
+            SQL = SQL + " WHERE id_medida_produto = '" & medidaDTO.IdProdutoProduto & "'"
+
+            retorno = conexao.ExecuteQuery(SQL, parram)
+
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        Finally
+            conexao.CloseConn()
+        End Try
+
+        Return retorno
+    End Function
+
     Public Function SelecionaMedida(medidaDTO As MedidaDTO) As MedidaDTO
         Dim conexao As New Conexao
         Dim retorno As New MedidaDTO

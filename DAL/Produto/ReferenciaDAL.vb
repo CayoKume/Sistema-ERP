@@ -93,7 +93,7 @@ Public Class ReferenciaDAL
 
         Try
             SQL = Nothing
-            SQL = SQL + " SELECT * From CATEGORIA_PRODUTO"
+            SQL = SQL + " SELECT * From REFERENCIA_PRODUTO WHERE produto_id_produto = '" & referenciaDTO.IdProduto & "'"
 
             dt = conexao.ExecuteDataTable(SQL)
 

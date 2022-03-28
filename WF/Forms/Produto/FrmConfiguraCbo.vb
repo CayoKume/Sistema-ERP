@@ -35,7 +35,6 @@ Public Class FrmConfiguraCbo
             ElseIf lboCategoria.Text = "Tipo do Produto" Then
                 Dim tipoprodutoDTO As New TipoProdutoDTO
                 tipoprodutoDTO.CodigoTipoProduto = CodigoLabel
-                tipoprodutoDTO.CodigoCategoriaProduto = FrmProdutos.CategoriaProduto
 
                 Dim tipoprodutoBLL As New TipoProdutoBLL
                 Try
@@ -73,6 +72,11 @@ Public Class FrmConfiguraCbo
                 MessageBox.Show("Medida estoque cadastrada com sucesso!.")
                 Me.Close()
 
+            ElseIf lboCategoria.Text = "Catálago" Then
+                My.Settings.ConfiguraCboCatalago.Add(CodigoLabel.ToString)
+                My.Settings.Save()
+                MessageBox.Show("Catálago referência cadastrado com sucesso!.")
+                Me.Close()
             End If
         Else
             MessageBox.Show("Digite um Parâmetro")
@@ -138,6 +142,12 @@ Public Class FrmConfiguraCbo
                 MessageBox.Show("Medida estoque removida com sucesso!.")
                 Me.Close()
 
+            ElseIf lboCategoria.Text = "Catálago" Then
+                My.Settings.ConfiguraCboCatalago.Remove(CodigoLabel.ToString)
+                My.Settings.Save()
+                MessageBox.Show("Catálago referência removido com sucesso!.")
+                Me.Close()
+
             End If
         Else
             MessageBox.Show("Digite um Parâmetro")
@@ -198,6 +208,12 @@ Public Class FrmConfiguraCbo
         ElseIf lboCategoria.Text = "Medida Estoque" Then
             cboCategorias.Items.Clear()
             For Each item In My.Settings.ConfiguraCboMedidaEstoque
+                cboCategorias.Items.Add(item)
+            Next
+
+        ElseIf lboCategoria.Text = "Catálago" Then
+            cboCategorias.Items.Clear()
+            For Each item In My.Settings.ConfiguraCboCatalago
                 cboCategorias.Items.Add(item)
             Next
 
