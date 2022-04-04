@@ -141,7 +141,7 @@ Partial Class FrmProdutos
         'lboFoto
         '
         Me.lboFoto.AutoSize = True
-        Me.lboFoto.Location = New System.Drawing.Point(709, 95)
+        Me.lboFoto.Location = New System.Drawing.Point(707, 93)
         Me.lboFoto.Name = "lboFoto"
         Me.lboFoto.Size = New System.Drawing.Size(28, 13)
         Me.lboFoto.TabIndex = 0
@@ -766,14 +766,16 @@ Partial Class FrmProdutos
         '
         'pctboxProduto
         '
-        Me.pctboxProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctboxProduto.Location = New System.Drawing.Point(707, 99)
+        Me.pctboxProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pctboxProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pctboxProduto.Cursor = System.Windows.Forms.Cursors.Default
+        Me.pctboxProduto.Location = New System.Drawing.Point(702, 100)
         Me.pctboxProduto.Name = "pctboxProduto"
-        Me.pctboxProduto.Size = New System.Drawing.Size(156, 183)
+        Me.pctboxProduto.Size = New System.Drawing.Size(156, 116)
+        Me.pctboxProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pctboxProduto.TabIndex = 34
         Me.pctboxProduto.TabStop = False
         Me.pctboxProduto.Tag = ""
-        Me.pctboxProduto.UseWaitCursor = True
         '
         'pnlBotoes
         '

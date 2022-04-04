@@ -19,6 +19,7 @@
     Private _CodigoTipoProduto As String
     Private _CodigoCategoriaProduto As String
     Private _IdMedidaProduto As String
+    Private _ImagemProduto As Byte()
 #End Region
 
 #Region "PROPIEDADES"
@@ -184,6 +185,14 @@
         End Set
     End Property
 
+    Public Property ImagemProduto As Byte()
+        Get
+            Return _ImagemProduto
+        End Get
+        Set
+            _ImagemProduto = Value
+        End Set
+    End Property
 #End Region
 
 End Class

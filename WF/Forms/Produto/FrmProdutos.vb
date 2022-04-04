@@ -1,6 +1,7 @@
 ﻿
 Imports DTO
 Imports BLL
+Imports System.IO
 
 Public Class FrmProdutos
 
@@ -25,6 +26,8 @@ Public Class FrmProdutos
     Public DescricaoDetalhadaProduto As String
     Public ObservacoesProduto As String
     Public IdMedidaProduto As Integer
+    Public NomeArquivoImagem As String
+    Public Imagem() As Byte
 #End Region
 
 #Region "BOTÕES"
@@ -119,6 +122,7 @@ Public Class FrmProdutos
         cboCategoria.Items.Clear()
         cboMargemLucro.Items.Clear()
         cboStatus.Items.Clear()
+        NomeArquivoImagem = Nothing
 
         'CARREGA VALORES DOS COMBOBOXES cboCategoria E cboTipoProduto, CADASTRADOS NO BANCO DE DADOS
         Dim categoriaBLL As New CategoriaBLL
@@ -227,6 +231,7 @@ Public Class FrmProdutos
         produtoDTO.ObservacoesProduto = ObservacoesProduto
         produtoDTO.CodigoTipoProduto = TipoProduto
         produtoDTO.CodigoCategoriaProduto = CategoriaProduto
+        produtoDTO.ImagemProduto = Imagem
 
         If Trim(txtDescricao.Text) <> Nothing And Trim(txtCodigo.Text) = Nothing Then
             Dim medidaBLL As New MedidaBLL
@@ -360,6 +365,7 @@ Public Class FrmProdutos
         cboCategoria.SelectedIndex = -1
         cboTipoProduto.SelectedIndex = -1
         cboStatus.SelectedIndex = -1
+        pctboxProduto.Image = Nothing
     End Sub
 
     Private Sub TrataVariavel()
@@ -367,6 +373,8 @@ Public Class FrmProdutos
         Dim NewVetor() As String
         Dim elemento As String
         Dim lista As New List(Of String)()
+        Dim fs As FileStream
+        Dim br As BinaryReader
 
         For Each elemento In Vetor
             lista.Add(Trim(elemento.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", "")))
@@ -462,6 +470,15 @@ Public Class FrmProdutos
             ObservacoesProduto = NewVetor(18)
         Else
             ObservacoesProduto = Nothing
+        End If
+        If NomeArquivoImagem <> "" Then
+            fs = New FileStream(NomeArquivoImagem, FileMode.Open, FileAccess.Read)
+            br = New BinaryReader(fs)
+            Imagem = br.ReadBytes(CType(fs.Length, Integer))
+            br.Close()
+            fs.Close()
+        Else
+            Imagem = Nothing
         End If
     End Sub
 
@@ -597,6 +614,30 @@ Public Class FrmProdutos
             PesquisarProduto()
         End If
     End Sub
+
+    'CARREGA IMAGEM PARA A PICTUREBOX
+    Private Sub pctboxProduto_Click(sender As Object, e As EventArgs) Handles pctboxProduto.Click
+        Dim openFile As New OpenFileDialog()
+        openFile.Filter = "jpeg|*.jpg"
+
+        If openFile.ShowDialog() = DialogResult.OK Then
+            NomeArquivoImagem = openFile.FileName
+            Dim imagem = Image.FromFile(openFile.FileName)
+
+            Dim largura As Double = imagem.Width
+            Dim altura As Double = imagem.Height
+
+            Dim proporcao As Double = 156 / largura
+            Dim novaAltura As Double = (proporcao * altura)
+
+            pctboxProduto.Image = RedimensionarImagem(imagem, New Size(156, novaAltura))
+        End If
+    End Sub
+
+    'REDIMENSIONA IMAGEM PARA A PICTUREBOX
+    Private Function RedimensionarImagem(imagem As Image, tamanho As Size) As Image
+        Return New Bitmap(imagem, tamanho)
+    End Function
 #End Region
 
 End Class

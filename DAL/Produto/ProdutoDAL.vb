@@ -83,6 +83,11 @@ Public Class ProdutoDAL
             Else
                 parram.Add(New MySqlParameter("@Observacoes_Produto", DBNull.Value))
             End If
+            If produtoDTO.ImagemProduto IsNot Nothing Then
+                parram.Add(New MySqlParameter("@Imagem_Produto", produtoDTO.ImagemProduto))
+            Else
+                parram.Add(New MySqlParameter("@Imagem_Produto", DBNull.Value))
+            End If
             If produtoDTO.CodigoCategoriaProduto <> Nothing Then
                 parram.Add(New MySqlParameter("@Categoria_Produto_Codigo_Categoria_Produto", produtoDTO.CodigoCategoriaProduto))
             Else
@@ -102,9 +107,9 @@ Public Class ProdutoDAL
             SQL = Nothing
             SQL = SQL + "INSERT INTO PRODUTO (descricao_produto, classe_produto, status_produto, preco_compra_produto, compra_imposto_produto, margem_lucro_produto, preco_venda_produto,"
             SQL = SQL + " estoque_disponivel_produto, estoque_min_produto, estoque_max_produto, estoque_vinculado_produto, estoque_previsto_produto, descricoes_detalhadas_produto,"
-            SQL = SQL + " observacoes_produto, categoria_produto_codigo_categoria_produto, tipo_produto_codigo_tipo_produto, medida_produto_id_medida_produto)"
+            SQL = SQL + " observacoes_produto, imagem_produto, categoria_produto_codigo_categoria_produto, tipo_produto_codigo_tipo_produto, medida_produto_id_medida_produto)"
             SQL = SQL + "VALUES (@Descricao_Produto, @Classe_Produto, @Status_Produto, @Preco_Compra_Produto, @Compra_Imposto_Produto, @Margem_Lucro_Produto, @Preco_Venda_Produto, @Estoque_Disponivel_Produto,"
-            SQL = SQL + " @Estoque_Min_Produto, @Estoque_Max_Produto, @Estoque_Vinculado_Produto, @Estoque_Previsto_Produto, @Descricoes_Detalhadas_Produto, @Observacoes_Produto, @Categoria_Produto_Codigo_Categoria_Produto,"
+            SQL = SQL + " @Estoque_Min_Produto, @Estoque_Max_Produto, @Estoque_Vinculado_Produto, @Estoque_Previsto_Produto, @Descricoes_Detalhadas_Produto, @Observacoes_Produto, @Imagem_Produto, @Categoria_Produto_Codigo_Categoria_Produto,"
             SQL = SQL + " @Tipo_Produto_Codigo_Tipo_Produto, @Medida_Produto_Id_Medida_Produto)"
 
             retorno = conexao.ExecuteQuery(SQL, parram)
