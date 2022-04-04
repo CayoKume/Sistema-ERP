@@ -1,7 +1,6 @@
 ﻿
 Imports DTO
 Imports BLL
-Imports System.Globalization
 
 Public Class FrmProdutos
 
@@ -89,6 +88,126 @@ Public Class FrmProdutos
 
 #Region "INFERIORES"
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
+        SalvarProduto()
+    End Sub
+
+    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+        ExcluirProduto()
+    End Sub
+
+    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
+        PesquisarProduto()
+    End Sub
+
+    Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
+        LimpaCampos()
+    End Sub
+
+    Private Sub BtnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
+        Me.Close()
+        FrmPrincipal.Show()
+    End Sub
+#End Region
+
+#End Region
+
+#Region "MÉTODOS"
+    Private Sub FrmProdutos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        LimpaCampos()
+        txtDescricao.Select()
+        cboTipoProduto.Items.Clear()
+        cboCategoria.Items.Clear()
+        cboMargemLucro.Items.Clear()
+        cboStatus.Items.Clear()
+
+        'CARREGA VALORES DOS COMBOBOXES cboCategoria E cboTipoProduto, CADASTRADOS NO BANCO DE DADOS
+        Dim categoriaBLL As New CategoriaBLL
+        Try
+            Dim dtCategoria As DataTable = categoriaBLL.SelectCategoria()
+
+            For i = 0 To dtCategoria.Rows.Count - 1
+                cboCategoria.Items.Add(dtCategoria.Rows(i).Item(0).ToString)
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        Dim tipoprodutoBLL As New TipoProdutoBLL
+        Try
+            Dim dtTipo As DataTable = tipoprodutoBLL.SelectTipoProduto()
+
+            For i = 0 To dtTipo.Rows.Count - 1
+                cboTipoProduto.Items.Add(dtTipo.Rows(i).Item(0).ToString)
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        'CARREGA VALORES DOS COMBOBOXES cboStatus E cboMargemLucro, CADASTRADOS NA CONFIGURAÇÃO DE STATUS My.Settings
+        For Each item In My.Settings.ConfiguraCboStatus
+            cboStatus.Items.Add(item)
+        Next
+
+        For Each item In My.Settings.ConfiguraCboMargemLucro
+            cboMargemLucro.Items.Add(item)
+        Next
+    End Sub
+
+    Private Sub PesquisarProduto()
+        TrataVariavel()
+        Dim produtoDTO As New ProdutoDTO
+        Dim referenciaDTO As New ReferenciaDTO
+
+        If IdProduto <> Nothing And DescricaoProduto = Nothing And ReferenciaProduto = Nothing Then
+            'PESQUISA PRODUTO POR ID
+            produtoDTO.IdProduto = IdProduto
+            Dim produtoBLL As New ProdutoBLL
+            Try
+                If produtoBLL.SelectProdutoById(produtoDTO) IsNot Nothing Then
+                    If produtoDTO.DescricaoProduto <> Nothing Then
+                        SelecionaProduto(produtoDTO)
+                    End If
+                Else
+                    MessageBox.Show("Produto não cadastrado")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        ElseIf IdProduto = Nothing And DescricaoProduto <> Nothing And ReferenciaProduto = Nothing Then
+            'PESQUISA PRODUTO POR DESCRIÇÃO
+            produtoDTO.DescricaoProduto = DescricaoProduto
+            Dim produtoBLL As New ProdutoBLL
+            Try
+                If produtoBLL.SelectProdutoByDescricao(produtoDTO) IsNot Nothing Then
+                    If produtoDTO.DescricaoProduto <> Nothing Then
+                        SelecionaProduto(produtoDTO)
+                    End If
+                Else
+                    MessageBox.Show("Produto não cadastrado")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        ElseIf IdProduto = Nothing And DescricaoProduto = Nothing And ReferenciaProduto <> Nothing Then
+            'PESQUISA PRODUTO POR REFERENCIA
+            referenciaDTO.CodigoReferenciaProduto = ReferenciaProduto
+            Dim produtoBLL As New ProdutoBLL
+            Try
+                produtoDTO = produtoBLL.SelectProdutoByReferencia(referenciaDTO)
+                If produtoDTO.DescricaoProduto <> Nothing Then
+                    SelecionaProduto(produtoDTO)
+                Else
+                    MessageBox.Show("Produto não cadastrado")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
+    End Sub
+
+    Private Sub SalvarProduto()
         TrataVariavel()
         Dim produtoDTO As New ProdutoDTO
         produtoDTO.IdProduto = IdProduto
@@ -161,7 +280,7 @@ Public Class FrmProdutos
         LimpaCampos()
     End Sub
 
-    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+    Private Sub ExcluirProduto()
         TrataVariavel()
         Dim produtoDTO As New ProdutoDTO
         If IdProduto <> Nothing Then
@@ -180,110 +299,39 @@ Public Class FrmProdutos
         LimpaCampos()
     End Sub
 
-    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
-        TrataVariavel()
-
-        Dim produtoDTO As New ProdutoDTO
-        If IdProduto <> Nothing Then
-            produtoDTO.IdProduto = IdProduto
+    Private Sub SelecionaProduto(produtoDTO)
+        txtCodigo.Text = produtoDTO.IdProduto
+        txtDescricao.Text = produtoDTO.DescricaoProduto
+        If produtoDTO.ClasseProduto = "Matéria Prima" Then
+            rdoMateriaPrima.Checked = True
+        ElseIf produtoDTO.ClasseProduto = "Produto Acabado" Then
+            rdoProdutoAcabado.Checked = True
         End If
+        cboStatus.SelectedIndex = cboStatus.FindStringExact(produtoDTO.StatusProduto)
+        txtPrecoCompra.Text = produtoDTO.PrecoCompraProduto
+        txtCompraImposto.Text = produtoDTO.CompraImpostoProduto
+        cboMargemLucro.Text = produtoDTO.MargemLucroProduto
+        txtPrecoVenda.Text = produtoDTO.PrecoVendaProduto
+        txtEstoqueDisponivel.Text = produtoDTO.EstoqueDisponivelProduto
+        txtEstoqueMin.Text = produtoDTO.EstoqueMinProduto
+        txtEstoqueMax.Text = produtoDTO.EstoqueMaxProduto
+        txtEstoqueVinculado.Text = produtoDTO.EstoqueVinculadoProduto
+        txtEstoquePrevisto.Text = produtoDTO.EstoquePrevistoProduto
+        txtDescricaoDetalhada.Text = produtoDTO.DescricoesDetalhadasProduto
+        txtObservacoes.Text = produtoDTO.ObservacoesProduto
+        cboTipoProduto.SelectedIndex = cboTipoProduto.FindStringExact(produtoDTO.CodigoTipoProduto)
+        cboCategoria.SelectedIndex = cboCategoria.FindStringExact(produtoDTO.CodigoCategoriaProduto)
+        IdMedidaProduto = produtoDTO.IdMedidaProduto
 
-        Dim produtoBLL As New ProdutoBLL
-        Try
-            If produtoBLL.SelectProduto(produtoDTO) IsNot Nothing Then
-                If produtoDTO.DescricaoProduto <> Nothing Then
-                    txtCodigo.Text = produtoDTO.IdProduto
-                    txtDescricao.Text = produtoDTO.DescricaoProduto
-                    If produtoDTO.ClasseProduto = "Matéria Prima" Then
-                        rdoMateriaPrima.Checked = True
-                    ElseIf produtoDTO.ClasseProduto = "Produto Acabado" Then
-                        rdoProdutoAcabado.Checked = True
-                    End If
-                    cboStatus.SelectedIndex = cboStatus.FindStringExact(produtoDTO.StatusProduto)
-                    txtPrecoCompra.Text = produtoDTO.PrecoCompraProduto
-                    txtCompraImposto.Text = produtoDTO.CompraImpostoProduto
-                    cboMargemLucro.Text = produtoDTO.MargemLucroProduto
-                    txtPrecoVenda.Text = produtoDTO.PrecoVendaProduto
-                    txtEstoqueDisponivel.Text = produtoDTO.EstoqueDisponivelProduto
-                    txtEstoqueMin.Text = produtoDTO.EstoqueMinProduto
-                    txtEstoqueMax.Text = produtoDTO.EstoqueMaxProduto
-                    txtEstoqueVinculado.Text = produtoDTO.EstoqueVinculadoProduto
-                    txtEstoquePrevisto.Text = produtoDTO.EstoquePrevistoProduto
-                    txtDescricaoDetalhada.Text = produtoDTO.DescricoesDetalhadasProduto
-                    txtObservacoes.Text = produtoDTO.ObservacoesProduto
-                    cboTipoProduto.SelectedIndex = cboTipoProduto.FindStringExact(produtoDTO.CodigoTipoProduto)
-                    cboCategoria.SelectedIndex = cboCategoria.FindStringExact(produtoDTO.CodigoCategoriaProduto)
-                    IdMedidaProduto = produtoDTO.IdMedidaProduto
-
-                    Dim medidaDTO As New MedidaDTO
-                    medidaDTO.IdProdutoProduto = IdMedidaProduto
-                    Dim medidaBLL As New MedidaBLL
-                    medidaBLL.SelectMedida(medidaDTO)
-                    txtUnidade.Text = medidaDTO.UnidadeMedidaEstoqueProduto
-                    txtAltura.Text = medidaDTO.AlturaProduto
-                    txtLargura.Text = medidaDTO.LarguraProduto
-                    txtComprimento.Text = medidaDTO.ComprimentoProduto
-                    txtPeso.Text = medidaDTO.PesoUnitarioProduto
-                End If
-            Else
-                    MessageBox.Show("Produto não cadastrado")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
-        LimpaCampos()
-    End Sub
-
-    Private Sub BtnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
-        Me.Close()
-        FrmPrincipal.Show()
-    End Sub
-#End Region
-
-#End Region
-
-#Region "MÉTODOS"
-    Private Sub FrmProdutos_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LimpaCampos()
-        cboTipoProduto.Items.Clear()
-        cboCategoria.Items.Clear()
-        cboMargemLucro.Items.Clear()
-        cboStatus.Items.Clear()
-
-        'CARREGA VALORES DOS COMBOBOXES cboCategoria E cboTipoProduto, CADASTRADOS NO BANCO DE DADOS
-        Dim categoriaBLL As New CategoriaBLL
-        Try
-            Dim dtCategoria As DataTable = categoriaBLL.SelectCategoria()
-
-            For i = 0 To dtCategoria.Rows.Count - 1
-                cboCategoria.Items.Add(dtCategoria.Rows(i).Item(0).ToString)
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-        Dim tipoprodutoBLL As New TipoProdutoBLL
-        Try
-            Dim dtTipo As DataTable = tipoprodutoBLL.SelectTipoProduto()
-
-            For i = 0 To dtTipo.Rows.Count - 1
-                cboTipoProduto.Items.Add(dtTipo.Rows(i).Item(0).ToString)
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-        'CARREGA VALORES DOS COMBOBOXES cboStatus E cboMargemLucro, CADASTRADOS NA CONFIGURAÇÃO DE STATUS My.Settings
-        For Each item In My.Settings.ConfiguraCboStatus
-            cboStatus.Items.Add(item)
-        Next
-
-        For Each item In My.Settings.ConfiguraCboMargemLucro
-            cboMargemLucro.Items.Add(item)
-        Next
+        Dim medidaDTO As New MedidaDTO
+        medidaDTO.IdProdutoProduto = IdMedidaProduto
+        Dim medidaBLL As New MedidaBLL
+        medidaBLL.SelectMedida(medidaDTO)
+        txtUnidade.Text = medidaDTO.UnidadeMedidaEstoqueProduto
+        txtAltura.Text = medidaDTO.AlturaProduto
+        txtLargura.Text = medidaDTO.LarguraProduto
+        txtComprimento.Text = medidaDTO.ComprimentoProduto
+        txtPeso.Text = medidaDTO.PesoUnitarioProduto
     End Sub
 
     Private Sub LimpaCampos()
@@ -321,7 +369,7 @@ Public Class FrmProdutos
         Dim lista As New List(Of String)()
 
         For Each elemento In Vetor
-            lista.Add(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Trim(elemento.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", ""))))
+            lista.Add(Trim(elemento.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", "")))
         Next
         NewVetor = lista.ToArray()
 
@@ -463,12 +511,14 @@ Public Class FrmProdutos
         Next
     End Sub
 
-    'VALIDA TEXTBOXES PARA SOMENTE ACEITAR NÚMEROS OU LETRAS
+    'VALIDA TEXTBOXES PARA SOMENTE ACEITAR NÚMEROS OU LETRAS, E USA O MESMO MÉTODO PARA ACIONAR PESQUISA PRODUTO PELA TECLA ENTER NOS CAMPOS txtCodigo, txtDescricao E txtReferencia
     Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
             e.Handled = True
+        ElseIf e.KeyChar = Chr(13) Then
+            PesquisarProduto()
         End If
     End Sub
 
@@ -536,6 +586,17 @@ Public Class FrmProdutos
         End If
     End Sub
 
+    Private Sub txtDescricao_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescricao.KeyPress
+        If e.KeyChar = Chr(13) Then
+            PesquisarProduto()
+        End If
+    End Sub
+
+    Private Sub txtReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtReferencia.KeyPress
+        If e.KeyChar = Chr(13) Then
+            PesquisarProduto()
+        End If
+    End Sub
 #End Region
 
 End Class

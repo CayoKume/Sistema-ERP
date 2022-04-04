@@ -64,6 +64,7 @@ Partial Class FrmProdutos
         Me.lboPrecoVenda = New System.Windows.Forms.Label()
         Me.lboPrecoCompra = New System.Windows.Forms.Label()
         Me.pnlProduto = New System.Windows.Forms.Panel()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.BtnFornecedores = New System.Windows.Forms.Button()
         Me.BtnStatus = New System.Windows.Forms.Button()
         Me.BtnCategoria = New System.Windows.Forms.Button()
@@ -76,7 +77,6 @@ Partial Class FrmProdutos
         Me.cboTipoProduto = New System.Windows.Forms.ComboBox()
         Me.txtReferencia = New System.Windows.Forms.TextBox()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.lboReferencia = New System.Windows.Forms.Label()
         Me.lboDescricao = New System.Windows.Forms.Label()
         Me.lboCodigo = New System.Windows.Forms.Label()
@@ -136,7 +136,7 @@ Partial Class FrmProdutos
         Me.pnlFormularios.Location = New System.Drawing.Point(7, 30)
         Me.pnlFormularios.Name = "pnlFormularios"
         Me.pnlFormularios.Size = New System.Drawing.Size(868, 488)
-        Me.pnlFormularios.TabIndex = 56
+        Me.pnlFormularios.TabIndex = 0
         '
         'lboFoto
         '
@@ -144,7 +144,7 @@ Partial Class FrmProdutos
         Me.lboFoto.Location = New System.Drawing.Point(709, 95)
         Me.lboFoto.Name = "lboFoto"
         Me.lboFoto.Size = New System.Drawing.Size(28, 13)
-        Me.lboFoto.TabIndex = 52
+        Me.lboFoto.TabIndex = 0
         Me.lboFoto.Text = "Foto"
         '
         'lboValores
@@ -153,7 +153,7 @@ Partial Class FrmProdutos
         Me.lboValores.Location = New System.Drawing.Point(10, 92)
         Me.lboValores.Name = "lboValores"
         Me.lboValores.Size = New System.Drawing.Size(42, 13)
-        Me.lboValores.TabIndex = 51
+        Me.lboValores.TabIndex = 0
         Me.lboValores.Text = "Valores"
         '
         'lboEstoque
@@ -162,7 +162,7 @@ Partial Class FrmProdutos
         Me.lboEstoque.Location = New System.Drawing.Point(9, 159)
         Me.lboEstoque.Name = "lboEstoque"
         Me.lboEstoque.Size = New System.Drawing.Size(46, 13)
-        Me.lboEstoque.TabIndex = 50
+        Me.lboEstoque.TabIndex = 0
         Me.lboEstoque.Text = "Estoque"
         '
         'lboMedidas
@@ -172,7 +172,7 @@ Partial Class FrmProdutos
         Me.lboMedidas.Location = New System.Drawing.Point(10, 224)
         Me.lboMedidas.Name = "lboMedidas"
         Me.lboMedidas.Size = New System.Drawing.Size(53, 16)
-        Me.lboMedidas.TabIndex = 49
+        Me.lboMedidas.TabIndex = 0
         Me.lboMedidas.Text = "Medidas"
         '
         'lboDescricoes
@@ -182,7 +182,7 @@ Partial Class FrmProdutos
         Me.lboDescricoes.Location = New System.Drawing.Point(10, 286)
         Me.lboDescricoes.Name = "lboDescricoes"
         Me.lboDescricoes.Size = New System.Drawing.Size(64, 16)
-        Me.lboDescricoes.TabIndex = 48
+        Me.lboDescricoes.TabIndex = 0
         Me.lboDescricoes.Text = "Descrições"
         '
         'pnlDescricoes
@@ -195,7 +195,8 @@ Partial Class FrmProdutos
         Me.pnlDescricoes.Location = New System.Drawing.Point(1, 295)
         Me.pnlDescricoes.Name = "pnlDescricoes"
         Me.pnlDescricoes.Size = New System.Drawing.Size(863, 191)
-        Me.pnlDescricoes.TabIndex = 0
+        Me.pnlDescricoes.TabIndex = 4
+        Me.pnlDescricoes.TabStop = True
         '
         'lboObservacoes
         '
@@ -204,7 +205,7 @@ Partial Class FrmProdutos
         Me.lboObservacoes.Location = New System.Drawing.Point(8, 98)
         Me.lboObservacoes.Name = "lboObservacoes"
         Me.lboObservacoes.Size = New System.Drawing.Size(75, 16)
-        Me.lboObservacoes.TabIndex = 51
+        Me.lboObservacoes.TabIndex = 0
         Me.lboObservacoes.Text = "Observações"
         '
         'lboDescricaoDetalhada
@@ -214,24 +215,26 @@ Partial Class FrmProdutos
         Me.lboDescricaoDetalhada.Location = New System.Drawing.Point(8, 13)
         Me.lboDescricaoDetalhada.Name = "lboDescricaoDetalhada"
         Me.lboDescricaoDetalhada.Size = New System.Drawing.Size(115, 16)
-        Me.lboDescricaoDetalhada.TabIndex = 50
+        Me.lboDescricaoDetalhada.TabIndex = 0
         Me.lboDescricaoDetalhada.Text = "Descrição Detalhada"
         '
         'txtObservacoes
         '
+        Me.txtObservacoes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtObservacoes.Location = New System.Drawing.Point(11, 117)
         Me.txtObservacoes.Multiline = True
         Me.txtObservacoes.Name = "txtObservacoes"
         Me.txtObservacoes.Size = New System.Drawing.Size(845, 65)
-        Me.txtObservacoes.TabIndex = 49
+        Me.txtObservacoes.TabIndex = 1
         '
         'txtDescricaoDetalhada
         '
+        Me.txtDescricaoDetalhada.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDescricaoDetalhada.Location = New System.Drawing.Point(11, 29)
         Me.txtDescricaoDetalhada.Multiline = True
         Me.txtDescricaoDetalhada.Name = "txtDescricaoDetalhada"
         Me.txtDescricaoDetalhada.Size = New System.Drawing.Size(845, 65)
-        Me.txtDescricaoDetalhada.TabIndex = 48
+        Me.txtDescricaoDetalhada.TabIndex = 0
         '
         'pnlMedidas
         '
@@ -247,15 +250,18 @@ Partial Class FrmProdutos
         Me.pnlMedidas.Location = New System.Drawing.Point(1, 232)
         Me.pnlMedidas.Name = "pnlMedidas"
         Me.pnlMedidas.Size = New System.Drawing.Size(694, 50)
-        Me.pnlMedidas.TabIndex = 47
+        Me.pnlMedidas.TabIndex = 3
+        Me.pnlMedidas.TabStop = True
         '
         'txtPeso
         '
+        Me.txtPeso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPeso.Enabled = False
         Me.txtPeso.Location = New System.Drawing.Point(635, 16)
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(50, 20)
-        Me.txtPeso.TabIndex = 38
+        Me.txtPeso.TabIndex = 0
+        Me.txtPeso.TabStop = False
         Me.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboPeso
@@ -265,43 +271,51 @@ Partial Class FrmProdutos
         Me.lboPeso.Location = New System.Drawing.Point(550, 18)
         Me.lboPeso.Name = "lboPeso"
         Me.lboPeso.Size = New System.Drawing.Size(79, 16)
-        Me.lboPeso.TabIndex = 37
+        Me.lboPeso.TabIndex = 0
         Me.lboPeso.Text = "Peso(gramas)"
         '
         'txtComprimento
         '
+        Me.txtComprimento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtComprimento.Enabled = False
         Me.txtComprimento.Location = New System.Drawing.Point(494, 16)
         Me.txtComprimento.Name = "txtComprimento"
         Me.txtComprimento.Size = New System.Drawing.Size(50, 20)
-        Me.txtComprimento.TabIndex = 36
+        Me.txtComprimento.TabIndex = 0
+        Me.txtComprimento.TabStop = False
         Me.txtComprimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLargura
         '
+        Me.txtLargura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtLargura.Enabled = False
         Me.txtLargura.Location = New System.Drawing.Point(438, 16)
         Me.txtLargura.Name = "txtLargura"
         Me.txtLargura.Size = New System.Drawing.Size(50, 20)
-        Me.txtLargura.TabIndex = 35
+        Me.txtLargura.TabIndex = 0
+        Me.txtLargura.TabStop = False
         Me.txtLargura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAltura
         '
+        Me.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAltura.Enabled = False
         Me.txtAltura.Location = New System.Drawing.Point(382, 16)
         Me.txtAltura.Name = "txtAltura"
         Me.txtAltura.Size = New System.Drawing.Size(50, 20)
-        Me.txtAltura.TabIndex = 27
+        Me.txtAltura.TabIndex = 0
+        Me.txtAltura.TabStop = False
         Me.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtUnidade
         '
+        Me.txtUnidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUnidade.Enabled = False
         Me.txtUnidade.Location = New System.Drawing.Point(59, 16)
         Me.txtUnidade.Name = "txtUnidade"
         Me.txtUnidade.Size = New System.Drawing.Size(50, 20)
-        Me.txtUnidade.TabIndex = 16
+        Me.txtUnidade.TabIndex = 0
+        Me.txtUnidade.TabStop = False
         Me.txtUnidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboDimensoes
@@ -311,7 +325,7 @@ Partial Class FrmProdutos
         Me.lboDimensoes.Location = New System.Drawing.Point(115, 18)
         Me.lboDimensoes.Name = "lboDimensoes"
         Me.lboDimensoes.Size = New System.Drawing.Size(261, 16)
-        Me.lboDimensoes.TabIndex = 3
+        Me.lboDimensoes.TabIndex = 0
         Me.lboDimensoes.Text = "Dimensões(cm): Altura - Largura - Comprimento"
         '
         'lboUnidade
@@ -321,7 +335,7 @@ Partial Class FrmProdutos
         Me.lboUnidade.Location = New System.Drawing.Point(3, 18)
         Me.lboUnidade.Name = "lboUnidade"
         Me.lboUnidade.Size = New System.Drawing.Size(52, 16)
-        Me.lboUnidade.TabIndex = 2
+        Me.lboUnidade.TabIndex = 0
         Me.lboUnidade.Text = "Unidade"
         '
         'pnlEstoque
@@ -340,7 +354,8 @@ Partial Class FrmProdutos
         Me.pnlEstoque.Location = New System.Drawing.Point(1, 166)
         Me.pnlEstoque.Name = "pnlEstoque"
         Me.pnlEstoque.Size = New System.Drawing.Size(694, 50)
-        Me.pnlEstoque.TabIndex = 46
+        Me.pnlEstoque.TabIndex = 2
+        Me.pnlEstoque.TabStop = True
         '
         'BtnVinculado
         '
@@ -354,7 +369,7 @@ Partial Class FrmProdutos
         Me.BtnVinculado.Location = New System.Drawing.Point(409, 12)
         Me.BtnVinculado.Name = "BtnVinculado"
         Me.BtnVinculado.Size = New System.Drawing.Size(75, 25)
-        Me.BtnVinculado.TabIndex = 47
+        Me.BtnVinculado.TabIndex = 3
         Me.BtnVinculado.Text = "Vinculado"
         Me.BtnVinculado.UseVisualStyleBackColor = False
         '
@@ -369,48 +384,53 @@ Partial Class FrmProdutos
         Me.BtnPrevisto.Location = New System.Drawing.Point(546, 12)
         Me.BtnPrevisto.Name = "BtnPrevisto"
         Me.BtnPrevisto.Size = New System.Drawing.Size(68, 25)
-        Me.BtnPrevisto.TabIndex = 46
+        Me.BtnPrevisto.TabIndex = 5
         Me.BtnPrevisto.Text = "Previsto"
         Me.BtnPrevisto.UseVisualStyleBackColor = True
         '
         'txtEstoquePrevisto
         '
+        Me.txtEstoquePrevisto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstoquePrevisto.Location = New System.Drawing.Point(619, 14)
         Me.txtEstoquePrevisto.Name = "txtEstoquePrevisto"
         Me.txtEstoquePrevisto.Size = New System.Drawing.Size(50, 20)
-        Me.txtEstoquePrevisto.TabIndex = 45
+        Me.txtEstoquePrevisto.TabIndex = 6
         Me.txtEstoquePrevisto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEstoqueDisponivel
         '
+        Me.txtEstoqueDisponivel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstoqueDisponivel.Location = New System.Drawing.Point(73, 14)
         Me.txtEstoqueDisponivel.Name = "txtEstoqueDisponivel"
         Me.txtEstoqueDisponivel.Size = New System.Drawing.Size(50, 20)
-        Me.txtEstoqueDisponivel.TabIndex = 26
+        Me.txtEstoqueDisponivel.TabIndex = 0
         Me.txtEstoqueDisponivel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEstoqueMin
         '
+        Me.txtEstoqueMin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstoqueMin.Location = New System.Drawing.Point(212, 14)
         Me.txtEstoqueMin.Name = "txtEstoqueMin"
         Me.txtEstoqueMin.Size = New System.Drawing.Size(50, 20)
-        Me.txtEstoqueMin.TabIndex = 25
+        Me.txtEstoqueMin.TabIndex = 1
         Me.txtEstoqueMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEstoqueMax
         '
+        Me.txtEstoqueMax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstoqueMax.Location = New System.Drawing.Point(353, 14)
         Me.txtEstoqueMax.Name = "txtEstoqueMax"
         Me.txtEstoqueMax.Size = New System.Drawing.Size(50, 20)
-        Me.txtEstoqueMax.TabIndex = 24
+        Me.txtEstoqueMax.TabIndex = 2
         Me.txtEstoqueMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtEstoqueVinculado
         '
+        Me.txtEstoqueVinculado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEstoqueVinculado.Location = New System.Drawing.Point(490, 14)
         Me.txtEstoqueVinculado.Name = "txtEstoqueVinculado"
         Me.txtEstoqueVinculado.Size = New System.Drawing.Size(50, 20)
-        Me.txtEstoqueVinculado.TabIndex = 18
+        Me.txtEstoqueVinculado.TabIndex = 4
         Me.txtEstoqueVinculado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboEstoqueMax
@@ -420,7 +440,7 @@ Partial Class FrmProdutos
         Me.lboEstoqueMax.Location = New System.Drawing.Point(268, 16)
         Me.lboEstoqueMax.Name = "lboEstoqueMax"
         Me.lboEstoqueMax.Size = New System.Drawing.Size(79, 16)
-        Me.lboEstoqueMax.TabIndex = 6
+        Me.lboEstoqueMax.TabIndex = 0
         Me.lboEstoqueMax.Text = "Estoque Max."
         '
         'lboEstoqueMin
@@ -430,7 +450,7 @@ Partial Class FrmProdutos
         Me.lboEstoqueMin.Location = New System.Drawing.Point(129, 16)
         Me.lboEstoqueMin.Name = "lboEstoqueMin"
         Me.lboEstoqueMin.Size = New System.Drawing.Size(77, 16)
-        Me.lboEstoqueMin.TabIndex = 5
+        Me.lboEstoqueMin.TabIndex = 0
         Me.lboEstoqueMin.Text = "Estoque Min."
         '
         'lboDisponivel
@@ -440,7 +460,7 @@ Partial Class FrmProdutos
         Me.lboDisponivel.Location = New System.Drawing.Point(4, 16)
         Me.lboDisponivel.Name = "lboDisponivel"
         Me.lboDisponivel.Size = New System.Drawing.Size(63, 16)
-        Me.lboDisponivel.TabIndex = 4
+        Me.lboDisponivel.TabIndex = 0
         Me.lboDisponivel.Text = "Disponível"
         '
         'pnlValores
@@ -457,7 +477,8 @@ Partial Class FrmProdutos
         Me.pnlValores.Location = New System.Drawing.Point(1, 99)
         Me.pnlValores.Name = "pnlValores"
         Me.pnlValores.Size = New System.Drawing.Size(694, 50)
-        Me.pnlValores.TabIndex = 43
+        Me.pnlValores.TabIndex = 1
+        Me.pnlValores.TabStop = True
         '
         'BtnMargemLucro
         '
@@ -470,7 +491,7 @@ Partial Class FrmProdutos
         Me.BtnMargemLucro.Location = New System.Drawing.Point(336, 12)
         Me.BtnMargemLucro.Name = "BtnMargemLucro"
         Me.BtnMargemLucro.Size = New System.Drawing.Size(130, 25)
-        Me.BtnMargemLucro.TabIndex = 44
+        Me.BtnMargemLucro.TabIndex = 2
         Me.BtnMargemLucro.Text = "% Margem de Lucro"
         Me.BtnMargemLucro.UseVisualStyleBackColor = False
         '
@@ -481,14 +502,15 @@ Partial Class FrmProdutos
         Me.cboMargemLucro.Location = New System.Drawing.Point(472, 14)
         Me.cboMargemLucro.Name = "cboMargemLucro"
         Me.cboMargemLucro.Size = New System.Drawing.Size(50, 21)
-        Me.cboMargemLucro.TabIndex = 43
+        Me.cboMargemLucro.TabIndex = 3
         '
         'txtCompraImposto
         '
+        Me.txtCompraImposto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCompraImposto.Location = New System.Drawing.Point(280, 14)
         Me.txtCompraImposto.Name = "txtCompraImposto"
         Me.txtCompraImposto.Size = New System.Drawing.Size(50, 20)
-        Me.txtCompraImposto.TabIndex = 42
+        Me.txtCompraImposto.TabIndex = 1
         Me.txtCompraImposto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboCompraImposto
@@ -498,23 +520,25 @@ Partial Class FrmProdutos
         Me.lboCompraImposto.Location = New System.Drawing.Point(163, 16)
         Me.lboCompraImposto.Name = "lboCompraImposto"
         Me.lboCompraImposto.Size = New System.Drawing.Size(111, 16)
-        Me.lboCompraImposto.TabIndex = 38
+        Me.lboCompraImposto.TabIndex = 0
         Me.lboCompraImposto.Text = "Compra + Impostos"
         '
         'txtPrecoVenda
         '
+        Me.txtPrecoVenda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPrecoVenda.Location = New System.Drawing.Point(624, 14)
         Me.txtPrecoVenda.Name = "txtPrecoVenda"
         Me.txtPrecoVenda.Size = New System.Drawing.Size(50, 20)
-        Me.txtPrecoVenda.TabIndex = 19
+        Me.txtPrecoVenda.TabIndex = 4
         Me.txtPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPrecoCompra
         '
+        Me.txtPrecoCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPrecoCompra.Location = New System.Drawing.Point(107, 14)
         Me.txtPrecoCompra.Name = "txtPrecoCompra"
         Me.txtPrecoCompra.Size = New System.Drawing.Size(50, 20)
-        Me.txtPrecoCompra.TabIndex = 17
+        Me.txtPrecoCompra.TabIndex = 0
         Me.txtPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboPrecoVenda
@@ -524,7 +548,7 @@ Partial Class FrmProdutos
         Me.lboPrecoVenda.Location = New System.Drawing.Point(528, 16)
         Me.lboPrecoVenda.Name = "lboPrecoVenda"
         Me.lboPrecoVenda.Size = New System.Drawing.Size(90, 16)
-        Me.lboPrecoVenda.TabIndex = 9
+        Me.lboPrecoVenda.TabIndex = 0
         Me.lboPrecoVenda.Text = "Preço de Venda"
         '
         'lboPrecoCompra
@@ -534,12 +558,13 @@ Partial Class FrmProdutos
         Me.lboPrecoCompra.Location = New System.Drawing.Point(3, 16)
         Me.lboPrecoCompra.Name = "lboPrecoCompra"
         Me.lboPrecoCompra.Size = New System.Drawing.Size(98, 16)
-        Me.lboPrecoCompra.TabIndex = 8
+        Me.lboPrecoCompra.TabIndex = 0
         Me.lboPrecoCompra.Text = "Preço de Compra"
         '
         'pnlProduto
         '
         Me.pnlProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlProduto.Controls.Add(Me.txtCodigo)
         Me.pnlProduto.Controls.Add(Me.BtnFornecedores)
         Me.pnlProduto.Controls.Add(Me.BtnStatus)
         Me.pnlProduto.Controls.Add(Me.BtnCategoria)
@@ -552,14 +577,22 @@ Partial Class FrmProdutos
         Me.pnlProduto.Controls.Add(Me.cboTipoProduto)
         Me.pnlProduto.Controls.Add(Me.txtReferencia)
         Me.pnlProduto.Controls.Add(Me.txtDescricao)
-        Me.pnlProduto.Controls.Add(Me.txtCodigo)
         Me.pnlProduto.Controls.Add(Me.lboReferencia)
         Me.pnlProduto.Controls.Add(Me.lboDescricao)
         Me.pnlProduto.Controls.Add(Me.lboCodigo)
         Me.pnlProduto.Location = New System.Drawing.Point(1, 1)
         Me.pnlProduto.Name = "pnlProduto"
         Me.pnlProduto.Size = New System.Drawing.Size(863, 86)
-        Me.pnlProduto.TabIndex = 41
+        Me.pnlProduto.TabIndex = 0
+        Me.pnlProduto.TabStop = True
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(61, 16)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(50, 20)
+        Me.txtCodigo.TabIndex = 0
+        Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BtnFornecedores
         '
@@ -572,7 +605,7 @@ Partial Class FrmProdutos
         Me.BtnFornecedores.Location = New System.Drawing.Point(9, 52)
         Me.BtnFornecedores.Name = "BtnFornecedores"
         Me.BtnFornecedores.Size = New System.Drawing.Size(98, 25)
-        Me.BtnFornecedores.TabIndex = 44
+        Me.BtnFornecedores.TabIndex = 5
         Me.BtnFornecedores.Text = "Fornecedores"
         Me.BtnFornecedores.UseVisualStyleBackColor = True
         '
@@ -589,7 +622,7 @@ Partial Class FrmProdutos
         Me.BtnStatus.Location = New System.Drawing.Point(626, 52)
         Me.BtnStatus.Name = "BtnStatus"
         Me.BtnStatus.Size = New System.Drawing.Size(75, 25)
-        Me.BtnStatus.TabIndex = 43
+        Me.BtnStatus.TabIndex = 11
         Me.BtnStatus.Text = "Status"
         Me.BtnStatus.UseVisualStyleBackColor = False
         '
@@ -605,7 +638,7 @@ Partial Class FrmProdutos
         Me.BtnCategoria.Location = New System.Drawing.Point(240, 52)
         Me.BtnCategoria.Name = "BtnCategoria"
         Me.BtnCategoria.Size = New System.Drawing.Size(75, 25)
-        Me.BtnCategoria.TabIndex = 42
+        Me.BtnCategoria.TabIndex = 7
         Me.BtnCategoria.Text = "Categoria"
         Me.BtnCategoria.UseVisualStyleBackColor = False
         '
@@ -621,7 +654,7 @@ Partial Class FrmProdutos
         Me.BtnTipoProduto.Location = New System.Drawing.Point(427, 52)
         Me.BtnTipoProduto.Name = "BtnTipoProduto"
         Me.BtnTipoProduto.Size = New System.Drawing.Size(87, 25)
-        Me.BtnTipoProduto.TabIndex = 41
+        Me.BtnTipoProduto.TabIndex = 9
         Me.BtnTipoProduto.Text = "Tipo Produto"
         Me.BtnTipoProduto.UseVisualStyleBackColor = False
         '
@@ -631,7 +664,7 @@ Partial Class FrmProdutos
         Me.rdoProdutoAcabado.Location = New System.Drawing.Point(748, 28)
         Me.rdoProdutoAcabado.Name = "rdoProdutoAcabado"
         Me.rdoProdutoAcabado.Size = New System.Drawing.Size(108, 17)
-        Me.rdoProdutoAcabado.TabIndex = 40
+        Me.rdoProdutoAcabado.TabIndex = 4
         Me.rdoProdutoAcabado.Text = "Produto Acabado"
         Me.rdoProdutoAcabado.UseVisualStyleBackColor = True
         '
@@ -641,7 +674,7 @@ Partial Class FrmProdutos
         Me.rdoMateriaPrima.Location = New System.Drawing.Point(748, 5)
         Me.rdoMateriaPrima.Name = "rdoMateriaPrima"
         Me.rdoMateriaPrima.Size = New System.Drawing.Size(89, 17)
-        Me.rdoMateriaPrima.TabIndex = 39
+        Me.rdoMateriaPrima.TabIndex = 3
         Me.rdoMateriaPrima.Text = "Matéria Prima"
         Me.rdoMateriaPrima.UseVisualStyleBackColor = True
         '
@@ -652,7 +685,7 @@ Partial Class FrmProdutos
         Me.cboFornecedores.Location = New System.Drawing.Point(113, 54)
         Me.cboFornecedores.Name = "cboFornecedores"
         Me.cboFornecedores.Size = New System.Drawing.Size(121, 21)
-        Me.cboFornecedores.TabIndex = 32
+        Me.cboFornecedores.TabIndex = 6
         '
         'cboStatus
         '
@@ -663,7 +696,7 @@ Partial Class FrmProdutos
         Me.cboStatus.Location = New System.Drawing.Point(707, 54)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(100, 21)
-        Me.cboStatus.TabIndex = 31
+        Me.cboStatus.TabIndex = 12
         '
         'cboCategoria
         '
@@ -672,7 +705,7 @@ Partial Class FrmProdutos
         Me.cboCategoria.Location = New System.Drawing.Point(321, 54)
         Me.cboCategoria.Name = "cboCategoria"
         Me.cboCategoria.Size = New System.Drawing.Size(100, 21)
-        Me.cboCategoria.TabIndex = 29
+        Me.cboCategoria.TabIndex = 8
         '
         'cboTipoProduto
         '
@@ -681,31 +714,25 @@ Partial Class FrmProdutos
         Me.cboTipoProduto.Location = New System.Drawing.Point(520, 54)
         Me.cboTipoProduto.Name = "cboTipoProduto"
         Me.cboTipoProduto.Size = New System.Drawing.Size(100, 21)
-        Me.cboTipoProduto.TabIndex = 28
+        Me.cboTipoProduto.TabIndex = 10
         '
         'txtReferencia
         '
+        Me.txtReferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtReferencia.Location = New System.Drawing.Point(649, 16)
         Me.txtReferencia.Name = "txtReferencia"
         Me.txtReferencia.Size = New System.Drawing.Size(85, 20)
-        Me.txtReferencia.TabIndex = 21
+        Me.txtReferencia.TabIndex = 2
         Me.txtReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtDescricao
         '
+        Me.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDescricao.Location = New System.Drawing.Point(182, 16)
         Me.txtDescricao.Name = "txtDescricao"
         Me.txtDescricao.Size = New System.Drawing.Size(392, 20)
-        Me.txtDescricao.TabIndex = 15
+        Me.txtDescricao.TabIndex = 1
         Me.txtDescricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(61, 16)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(50, 20)
-        Me.txtCodigo.TabIndex = 14
-        Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboReferencia
         '
@@ -714,7 +741,7 @@ Partial Class FrmProdutos
         Me.lboReferencia.Location = New System.Drawing.Point(580, 18)
         Me.lboReferencia.Name = "lboReferencia"
         Me.lboReferencia.Size = New System.Drawing.Size(63, 16)
-        Me.lboReferencia.TabIndex = 11
+        Me.lboReferencia.TabIndex = 0
         Me.lboReferencia.Text = "Referência"
         '
         'lboDescricao
@@ -724,7 +751,7 @@ Partial Class FrmProdutos
         Me.lboDescricao.Location = New System.Drawing.Point(117, 18)
         Me.lboDescricao.Name = "lboDescricao"
         Me.lboDescricao.Size = New System.Drawing.Size(59, 16)
-        Me.lboDescricao.TabIndex = 1
+        Me.lboDescricao.TabIndex = 0
         Me.lboDescricao.Text = "Descrição"
         '
         'lboCodigo
@@ -759,14 +786,15 @@ Partial Class FrmProdutos
         Me.pnlBotoes.Location = New System.Drawing.Point(190, 524)
         Me.pnlBotoes.Name = "pnlBotoes"
         Me.pnlBotoes.Size = New System.Drawing.Size(487, 28)
-        Me.pnlBotoes.TabIndex = 55
+        Me.pnlBotoes.TabIndex = 5
+        Me.pnlBotoes.TabStop = True
         '
         'BtnPesquisar
         '
         Me.BtnPesquisar.Location = New System.Drawing.Point(165, 3)
         Me.BtnPesquisar.Name = "BtnPesquisar"
         Me.BtnPesquisar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnPesquisar.TabIndex = 54
+        Me.BtnPesquisar.TabIndex = 2
         Me.BtnPesquisar.Text = "Pesquisar"
         Me.BtnPesquisar.UseVisualStyleBackColor = True
         '
@@ -775,7 +803,7 @@ Partial Class FrmProdutos
         Me.BtnImprimir.Location = New System.Drawing.Point(327, 3)
         Me.BtnImprimir.Name = "BtnImprimir"
         Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnImprimir.TabIndex = 53
+        Me.BtnImprimir.TabIndex = 4
         Me.BtnImprimir.Text = "Imprimir"
         Me.BtnImprimir.UseVisualStyleBackColor = True
         '
@@ -784,7 +812,7 @@ Partial Class FrmProdutos
         Me.BtnVoltar.Location = New System.Drawing.Point(408, 3)
         Me.BtnVoltar.Name = "BtnVoltar"
         Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnVoltar.TabIndex = 52
+        Me.BtnVoltar.TabIndex = 5
         Me.BtnVoltar.Text = "Voltar"
         Me.BtnVoltar.UseVisualStyleBackColor = True
         '
@@ -793,7 +821,7 @@ Partial Class FrmProdutos
         Me.BtnLimpar.Location = New System.Drawing.Point(246, 3)
         Me.BtnLimpar.Name = "BtnLimpar"
         Me.BtnLimpar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpar.TabIndex = 51
+        Me.BtnLimpar.TabIndex = 3
         Me.BtnLimpar.Text = "Limpar"
         Me.BtnLimpar.UseVisualStyleBackColor = True
         '
@@ -802,7 +830,7 @@ Partial Class FrmProdutos
         Me.BtnExcluir.Location = New System.Drawing.Point(84, 3)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnExcluir.TabIndex = 49
+        Me.BtnExcluir.TabIndex = 1
         Me.BtnExcluir.Text = "Excluir"
         Me.BtnExcluir.UseVisualStyleBackColor = True
         '
@@ -811,7 +839,7 @@ Partial Class FrmProdutos
         Me.BtnSalvar.Location = New System.Drawing.Point(3, 3)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnSalvar.TabIndex = 48
+        Me.BtnSalvar.TabIndex = 0
         Me.BtnSalvar.Text = "Salvar"
         Me.BtnSalvar.UseVisualStyleBackColor = True
         '
@@ -821,7 +849,7 @@ Partial Class FrmProdutos
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(881, 24)
-        Me.Menu.TabIndex = 37
+        Me.Menu.TabIndex = 0
         Me.Menu.Text = "MenuStrip1"
         '
         'ProdutoToolStripMenuItem
@@ -911,79 +939,79 @@ Partial Class FrmProdutos
     End Sub
 
     Friend WithEvents pnlPrincipal As Panel
-    Friend WithEvents lboCodigo As Label
-    Friend WithEvents lboDisponivel As Label
-    Friend WithEvents lboDescricao As Label
-    Friend WithEvents lboReferencia As Label
-    Friend WithEvents lboPrecoVenda As Label
-    Friend WithEvents lboPrecoCompra As Label
-    Friend WithEvents lboEstoqueMax As Label
-    Friend WithEvents lboEstoqueMin As Label
-    Friend WithEvents pctboxProduto As PictureBox
     Friend WithEvents Menu As MenuStrip
     Friend WithEvents ProdutoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MedidasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImpostosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RelacionamentosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents lboCompraImposto As Label
     Friend WithEvents ServiçosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents pnlEstoque As Panel
-    Friend WithEvents pnlValores As Panel
-    Friend WithEvents pnlProduto As Panel
+    Friend WithEvents RefernciasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EtiquetasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AtivosFixosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RelatóriosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pnlFormularios As Panel
+    Friend WithEvents lboFoto As Label
+    Friend WithEvents lboValores As Label
+    Friend WithEvents lboEstoque As Label
+    Friend WithEvents lboMedidas As Label
+    Friend WithEvents lboDescricoes As Label
     Friend WithEvents pnlDescricoes As Panel
     Friend WithEvents lboObservacoes As Label
     Friend WithEvents lboDescricaoDetalhada As Label
+    Public WithEvents txtObservacoes As TextBox
+    Public WithEvents txtDescricaoDetalhada As TextBox
+    Friend WithEvents pnlMedidas As Panel
+    Public WithEvents txtPeso As TextBox
+    Friend WithEvents lboPeso As Label
+    Public WithEvents txtComprimento As TextBox
+    Public WithEvents txtLargura As TextBox
+    Public WithEvents txtAltura As TextBox
+    Public WithEvents txtUnidade As TextBox
+    Friend WithEvents lboDimensoes As Label
+    Friend WithEvents lboUnidade As Label
+    Friend WithEvents pnlEstoque As Panel
+    Friend WithEvents BtnVinculado As Button
+    Friend WithEvents BtnPrevisto As Button
+    Public WithEvents txtEstoquePrevisto As TextBox
+    Public WithEvents txtEstoqueDisponivel As TextBox
+    Public WithEvents txtEstoqueMin As TextBox
+    Public WithEvents txtEstoqueMax As TextBox
+    Public WithEvents txtEstoqueVinculado As TextBox
+    Friend WithEvents lboEstoqueMax As Label
+    Friend WithEvents lboEstoqueMin As Label
+    Friend WithEvents lboDisponivel As Label
+    Friend WithEvents pnlValores As Panel
+    Friend WithEvents BtnMargemLucro As Button
+    Public WithEvents cboMargemLucro As ComboBox
+    Public WithEvents txtCompraImposto As TextBox
+    Friend WithEvents lboCompraImposto As Label
+    Public WithEvents txtPrecoVenda As TextBox
+    Public WithEvents txtPrecoCompra As TextBox
+    Friend WithEvents lboPrecoVenda As Label
+    Friend WithEvents lboPrecoCompra As Label
+    Friend WithEvents pnlProduto As Panel
+    Friend WithEvents BtnFornecedores As Button
+    Friend WithEvents BtnStatus As Button
+    Friend WithEvents BtnCategoria As Button
+    Friend WithEvents BtnTipoProduto As Button
+    Public WithEvents rdoProdutoAcabado As RadioButton
+    Public WithEvents rdoMateriaPrima As RadioButton
+    Public WithEvents cboFornecedores As ComboBox
+    Public WithEvents cboStatus As ComboBox
+    Public WithEvents cboCategoria As ComboBox
+    Public WithEvents cboTipoProduto As ComboBox
+    Public WithEvents txtReferencia As TextBox
+    Public WithEvents txtDescricao As TextBox
+    Public WithEvents txtCodigo As TextBox
+    Friend WithEvents lboReferencia As Label
+    Friend WithEvents lboDescricao As Label
+    Friend WithEvents lboCodigo As Label
+    Friend WithEvents pctboxProduto As PictureBox
+    Friend WithEvents pnlBotoes As Panel
     Friend WithEvents BtnPesquisar As Button
     Friend WithEvents BtnImprimir As Button
     Friend WithEvents BtnVoltar As Button
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents BtnExcluir As Button
     Friend WithEvents BtnSalvar As Button
-    Friend WithEvents pnlBotoes As Panel
-    Friend WithEvents RefernciasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents pnlFormularios As Panel
-    Friend WithEvents lboEstoque As Label
-    Friend WithEvents lboDescricoes As Label
-    Friend WithEvents lboFoto As Label
-    Friend WithEvents lboValores As Label
-    Friend WithEvents BtnCategoria As Button
-    Friend WithEvents BtnTipoProduto As Button
-    Friend WithEvents BtnStatus As Button
-    Friend WithEvents BtnFornecedores As Button
-    Friend WithEvents BtnPrevisto As Button
-    Friend WithEvents BtnVinculado As Button
-    Friend WithEvents EtiquetasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AtivosFixosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RelatóriosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BtnMargemLucro As Button
-    Friend WithEvents lboMedidas As Label
-    Friend WithEvents pnlMedidas As Panel
-    Friend WithEvents lboPeso As Label
-    Friend WithEvents lboDimensoes As Label
-    Friend WithEvents lboUnidade As Label
-    Public WithEvents txtCodigo As TextBox
-    Public WithEvents txtReferencia As TextBox
-    Public WithEvents txtPrecoVenda As TextBox
-    Public WithEvents txtEstoqueVinculado As TextBox
-    Public WithEvents txtPrecoCompra As TextBox
-    Public WithEvents txtDescricao As TextBox
-    Public WithEvents txtEstoqueDisponivel As TextBox
-    Public WithEvents txtEstoqueMin As TextBox
-    Public WithEvents txtEstoqueMax As TextBox
-    Public WithEvents cboCategoria As ComboBox
-    Public WithEvents cboTipoProduto As ComboBox
-    Public WithEvents cboFornecedores As ComboBox
-    Public WithEvents cboStatus As ComboBox
-    Public WithEvents rdoProdutoAcabado As RadioButton
-    Public WithEvents rdoMateriaPrima As RadioButton
-    Public WithEvents txtEstoquePrevisto As TextBox
-    Public WithEvents txtCompraImposto As TextBox
-    Public WithEvents txtObservacoes As TextBox
-    Public WithEvents txtDescricaoDetalhada As TextBox
-    Public WithEvents cboMargemLucro As ComboBox
-    Public WithEvents txtPeso As TextBox
-    Public WithEvents txtComprimento As TextBox
-    Public WithEvents txtLargura As TextBox
-    Public WithEvents txtAltura As TextBox
-    Public WithEvents txtUnidade As TextBox
 End Class

@@ -84,6 +84,7 @@ Public Class FrmMedidas
 
 #Region "MÉTODOS"
     Private Sub FrmMedidas_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cboMedidaCompra.Select()
         cboMedidaCompra.Items.Clear()
         For Each item In My.Settings.ConfiguraCboMedidaCompra
             cboMedidaCompra.Items.Add(item)

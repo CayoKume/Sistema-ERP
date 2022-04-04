@@ -15,66 +15,66 @@
     <Setting Name="ConfiguraCboStatus" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;Ativado&lt;/string&gt;
-  &lt;string&gt;Desativado&lt;/string&gt;
+  &lt;string&gt;ATIVADO&lt;/string&gt;
+  &lt;string&gt;DESATIVADO&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="ConfiguraCboMedidaEstoque" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;M² - Metro Quadrado&lt;/string&gt;
-  &lt;string&gt;Cm² - Centímetro Quadrado&lt;/string&gt;
-  &lt;string&gt;M - Metro&lt;/string&gt;
-  &lt;string&gt;Cm - Centímetro&lt;/string&gt;
-  &lt;string&gt;Un - Unidade&lt;/string&gt;
-  &lt;string&gt;Ct - Cartela&lt;/string&gt;
-  &lt;string&gt;Cx - Caixa&lt;/string&gt;
-  &lt;string&gt;Dz - Duzia&lt;/string&gt;
-  &lt;string&gt;Gs - Grosa&lt;/string&gt;
-  &lt;string&gt;Pa - Par&lt;/string&gt;
-  &lt;string&gt;Pç - Peça&lt;/string&gt;
-  &lt;string&gt;Pr - Par&lt;/string&gt;
-  &lt;string&gt;Pt - Pacote&lt;/string&gt;
-  &lt;string&gt;Rl - Rolo&lt;/string&gt;
-  &lt;string&gt;Kg - Kilo&lt;/string&gt;
-  &lt;string&gt;G - Grama&lt;/string&gt;
-  &lt;string&gt;Sc60 - Saca 60Kg&lt;/string&gt;
-  &lt;string&gt;L - Litro&lt;/string&gt;
-  &lt;string&gt;M³ - Metro Cúbico&lt;/string&gt;
-  &lt;string&gt;Ml - Mililitro&lt;/string&gt;
+  &lt;string&gt;M² - METRO QUADRADO&lt;/string&gt;
+  &lt;string&gt;CM² - CENTÍMETRO QUADRADO&lt;/string&gt;
+  &lt;string&gt;M - METRO&lt;/string&gt;
+  &lt;string&gt;CM - CENTÍMETRO&lt;/string&gt;
+  &lt;string&gt;UN - UUNIDADE&lt;/string&gt;
+  &lt;string&gt;CT - CARTELA&lt;/string&gt;
+  &lt;string&gt;CX - CAIXA&lt;/string&gt;
+  &lt;string&gt;DZ - DÚZIA&lt;/string&gt;
+  &lt;string&gt;GS - GROSA&lt;/string&gt;
+  &lt;string&gt;PA - PAR&lt;/string&gt;
+  &lt;string&gt;PÇ - PEÇA&lt;/string&gt;
+  &lt;string&gt;PR - PAR&lt;/string&gt;
+  &lt;string&gt;PT - PACOTE&lt;/string&gt;
+  &lt;string&gt;RL - ROLO&lt;/string&gt;
+  &lt;string&gt;KG - KILO&lt;/string&gt;
+  &lt;string&gt;G - GRAMA&lt;/string&gt;
+  &lt;string&gt;SC60 - SACA 60Kg&lt;/string&gt;
+  &lt;string&gt;L - LITRO&lt;/string&gt;
+  &lt;string&gt;M³ - METRO CÚBICO&lt;/string&gt;
+  &lt;string&gt;ML - MILILITRO&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="ConfiguraCboMedidaCompra" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;M² - Metro Quadrado&lt;/string&gt;
-  &lt;string&gt;Cm² - Centímetro Quadrado&lt;/string&gt;
-  &lt;string&gt;M - Metro&lt;/string&gt;
-  &lt;string&gt;Cm - Centímetro&lt;/string&gt;
-  &lt;string&gt;Un - Unidade&lt;/string&gt;
-  &lt;string&gt;Ct - Cartela&lt;/string&gt;
-  &lt;string&gt;Cx - Caixa&lt;/string&gt;
-  &lt;string&gt;Dz - Duzia&lt;/string&gt;
-  &lt;string&gt;Gs - Grosa&lt;/string&gt;
-  &lt;string&gt;Pa - Par&lt;/string&gt;
-  &lt;string&gt;Pç - Peça&lt;/string&gt;
-  &lt;string&gt;Pr - Par&lt;/string&gt;
-  &lt;string&gt;Pt - Pacote&lt;/string&gt;
-  &lt;string&gt;Rl - Rolo&lt;/string&gt;
-  &lt;string&gt;Kg - Kilo&lt;/string&gt;
-  &lt;string&gt;G - Grama&lt;/string&gt;
-  &lt;string&gt;Sc60 - Saca 60Kg&lt;/string&gt;
-  &lt;string&gt;L - Litro&lt;/string&gt;
-  &lt;string&gt;M³ - Metro Cúbico&lt;/string&gt;
-  &lt;string&gt;Ml - Mililitro&lt;/string&gt;
+  &lt;string&gt;M² - METRO QUADRADO&lt;/string&gt;
+  &lt;string&gt;CM² - CENTÍMETRO QUADRADO&lt;/string&gt;
+  &lt;string&gt;M - METRO&lt;/string&gt;
+  &lt;string&gt;CM - CENTÍMETRO&lt;/string&gt;
+  &lt;string&gt;UN - UUNIDADE&lt;/string&gt;
+  &lt;string&gt;CT - CARTELA&lt;/string&gt;
+  &lt;string&gt;CX - CAIXA&lt;/string&gt;
+  &lt;string&gt;DZ - DÚZIA&lt;/string&gt;
+  &lt;string&gt;GS - GROSA&lt;/string&gt;
+  &lt;string&gt;PA - PAR&lt;/string&gt;
+  &lt;string&gt;PÇ - PEÇA&lt;/string&gt;
+  &lt;string&gt;PR - PAR&lt;/string&gt;
+  &lt;string&gt;PT - PACOTE&lt;/string&gt;
+  &lt;string&gt;RL - ROLO&lt;/string&gt;
+  &lt;string&gt;KG - KILO&lt;/string&gt;
+  &lt;string&gt;G - GRAMA&lt;/string&gt;
+  &lt;string&gt;SC60 - SACA 60Kg&lt;/string&gt;
+  &lt;string&gt;L - LITRO&lt;/string&gt;
+  &lt;string&gt;M³ - METRO CÚBICO&lt;/string&gt;
+  &lt;string&gt;ML - MILILITRO&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="ConfiguraCboCatalago" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;Código Interno&lt;/string&gt;
-  &lt;string&gt;Código Fornecedor&lt;/string&gt;
-  &lt;string&gt;Código de Barras&lt;/string&gt;
+  &lt;string&gt;CÓDIGO INTERNO&lt;/string&gt;
+  &lt;string&gt;CÓDIGO FORNECEDOR&lt;/string&gt;
+  &lt;string&gt;CÓDIGO BARRAS&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
   </Settings>

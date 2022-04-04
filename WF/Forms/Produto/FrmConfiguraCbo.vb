@@ -156,8 +156,12 @@ Public Class FrmConfiguraCbo
 #End Region
 
 #Region "MÉTODOS"
+    Private Sub FrmConfiguraCbo_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cboCategorias.Select()
+    End Sub
+
     Private Sub TrataVariavel()
-        CodigoLabel = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Trim(cboCategorias.Text.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", "")))
+        CodigoLabel = Trim(cboCategorias.Text.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", ""))
     End Sub
 
     Private Sub cboCategorias_DropDown(sender As Object, e As EventArgs) Handles cboCategorias.DropDown
@@ -219,6 +223,26 @@ Public Class FrmConfiguraCbo
 
         Else
             MessageBox.Show("Digite um Parâmetro")
+        End If
+    End Sub
+
+    'VALIDA COMBOBOX PARA SOMENTE ACEITAR NÚMEROS OU LETRAS MAIUSCULAS
+    Private Sub cboCategorias_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboCategorias.KeyPress
+        If lboCategoria.Text = "% Margem Lucro" Then
+            Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+            KeyAscii = CShort(SoNumeros(KeyAscii))
+            If KeyAscii = 0 Then
+                e.Handled = True
+            End If
+        ElseIf lboCategoria.Text = "Catálago" Or lboCategoria.Text = "Status" Or lboCategoria.Text = "Tipo do Produto" Or lboCategoria.Text = "Categoria" Then
+            Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+            KeyAscii = CShort(SoLetras(KeyAscii))
+            If KeyAscii = 0 Then
+                e.Handled = True
+            End If
+            If Char.IsLetter(e.KeyChar) Then
+                e.KeyChar = Char.ToUpper(e.KeyChar)
+            End If
         End If
     End Sub
 #End Region

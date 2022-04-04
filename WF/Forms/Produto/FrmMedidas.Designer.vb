@@ -48,13 +48,13 @@ Partial Class FrmMedidas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lboPesos = New System.Windows.Forms.Label()
         Me.lboUnidade = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlBotoes = New System.Windows.Forms.Panel()
         Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.pnlDimensoes.SuspendLayout()
         Me.pnlPesos.SuspendLayout()
         Me.pnlUnidades.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.pnlBotoes.SuspendLayout()
         Me.SuspendLayout()
         '
         'lboQtdCaixa
@@ -64,7 +64,7 @@ Partial Class FrmMedidas
         Me.lboQtdCaixa.Location = New System.Drawing.Point(8, 70)
         Me.lboQtdCaixa.Name = "lboQtdCaixa"
         Me.lboQtdCaixa.Size = New System.Drawing.Size(86, 16)
-        Me.lboQtdCaixa.TabIndex = 2
+        Me.lboQtdCaixa.TabIndex = 0
         Me.lboQtdCaixa.Text = "Qtde por Caixa"
         '
         'lboPesoUnitario
@@ -74,7 +74,7 @@ Partial Class FrmMedidas
         Me.lboPesoUnitario.Location = New System.Drawing.Point(8, 16)
         Me.lboPesoUnitario.Name = "lboPesoUnitario"
         Me.lboPesoUnitario.Size = New System.Drawing.Size(125, 16)
-        Me.lboPesoUnitario.TabIndex = 3
+        Me.lboPesoUnitario.TabIndex = 0
         Me.lboPesoUnitario.Text = "Peso Unitário(Gramas)"
         '
         'lboKiloCaixa
@@ -84,7 +84,7 @@ Partial Class FrmMedidas
         Me.lboKiloCaixa.Location = New System.Drawing.Point(8, 45)
         Me.lboKiloCaixa.Name = "lboKiloCaixa"
         Me.lboKiloCaixa.Size = New System.Drawing.Size(85, 16)
-        Me.lboKiloCaixa.TabIndex = 4
+        Me.lboKiloCaixa.TabIndex = 0
         Me.lboKiloCaixa.Text = "Kilos por Caixa"
         '
         'lboAltura
@@ -94,7 +94,7 @@ Partial Class FrmMedidas
         Me.lboAltura.Location = New System.Drawing.Point(8, 16)
         Me.lboAltura.Name = "lboAltura"
         Me.lboAltura.Size = New System.Drawing.Size(40, 16)
-        Me.lboAltura.TabIndex = 8
+        Me.lboAltura.TabIndex = 0
         Me.lboAltura.Text = "Altura"
         '
         'lboLargura
@@ -104,7 +104,7 @@ Partial Class FrmMedidas
         Me.lboLargura.Location = New System.Drawing.Point(8, 41)
         Me.lboLargura.Name = "lboLargura"
         Me.lboLargura.Size = New System.Drawing.Size(48, 16)
-        Me.lboLargura.TabIndex = 9
+        Me.lboLargura.TabIndex = 0
         Me.lboLargura.Text = "Largura"
         '
         'lboComprimento
@@ -114,7 +114,7 @@ Partial Class FrmMedidas
         Me.lboComprimento.Location = New System.Drawing.Point(8, 66)
         Me.lboComprimento.Name = "lboComprimento"
         Me.lboComprimento.Size = New System.Drawing.Size(80, 16)
-        Me.lboComprimento.TabIndex = 10
+        Me.lboComprimento.TabIndex = 0
         Me.lboComprimento.Text = "Comprimento"
         '
         'pnlDimensoes
@@ -131,14 +131,14 @@ Partial Class FrmMedidas
         Me.pnlDimensoes.Location = New System.Drawing.Point(5, 240)
         Me.pnlDimensoes.Name = "pnlDimensoes"
         Me.pnlDimensoes.Size = New System.Drawing.Size(323, 122)
-        Me.pnlDimensoes.TabIndex = 11
+        Me.pnlDimensoes.TabIndex = 2
         '
         'txtVolume
         '
         Me.txtVolume.Location = New System.Drawing.Point(203, 90)
         Me.txtVolume.Name = "txtVolume"
         Me.txtVolume.Size = New System.Drawing.Size(113, 20)
-        Me.txtVolume.TabIndex = 15
+        Me.txtVolume.TabIndex = 3
         Me.txtVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtComprimento
@@ -146,7 +146,7 @@ Partial Class FrmMedidas
         Me.txtComprimento.Location = New System.Drawing.Point(203, 64)
         Me.txtComprimento.Name = "txtComprimento"
         Me.txtComprimento.Size = New System.Drawing.Size(113, 20)
-        Me.txtComprimento.TabIndex = 14
+        Me.txtComprimento.TabIndex = 2
         Me.txtComprimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLargura
@@ -154,7 +154,7 @@ Partial Class FrmMedidas
         Me.txtLargura.Location = New System.Drawing.Point(203, 39)
         Me.txtLargura.Name = "txtLargura"
         Me.txtLargura.Size = New System.Drawing.Size(113, 20)
-        Me.txtLargura.TabIndex = 13
+        Me.txtLargura.TabIndex = 1
         Me.txtLargura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtAltura
@@ -162,7 +162,7 @@ Partial Class FrmMedidas
         Me.txtAltura.Location = New System.Drawing.Point(203, 14)
         Me.txtAltura.Name = "txtAltura"
         Me.txtAltura.Size = New System.Drawing.Size(113, 20)
-        Me.txtAltura.TabIndex = 12
+        Me.txtAltura.TabIndex = 0
         Me.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboVolume
@@ -172,7 +172,7 @@ Partial Class FrmMedidas
         Me.lboVolume.Location = New System.Drawing.Point(8, 92)
         Me.lboVolume.Name = "lboVolume"
         Me.lboVolume.Size = New System.Drawing.Size(70, 16)
-        Me.lboVolume.TabIndex = 11
+        Me.lboVolume.TabIndex = 0
         Me.lboVolume.Text = "Volume(m³)"
         '
         'pnlPesos
@@ -185,14 +185,14 @@ Partial Class FrmMedidas
         Me.pnlPesos.Location = New System.Drawing.Point(5, 158)
         Me.pnlPesos.Name = "pnlPesos"
         Me.pnlPesos.Size = New System.Drawing.Size(323, 72)
-        Me.pnlPesos.TabIndex = 12
+        Me.pnlPesos.TabIndex = 1
         '
         'txtKiloCaixa
         '
         Me.txtKiloCaixa.Location = New System.Drawing.Point(203, 43)
         Me.txtKiloCaixa.Name = "txtKiloCaixa"
         Me.txtKiloCaixa.Size = New System.Drawing.Size(113, 20)
-        Me.txtKiloCaixa.TabIndex = 6
+        Me.txtKiloCaixa.TabIndex = 1
         Me.txtKiloCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtPesoUnitario
@@ -200,7 +200,7 @@ Partial Class FrmMedidas
         Me.txtPesoUnitario.Location = New System.Drawing.Point(203, 14)
         Me.txtPesoUnitario.Name = "txtPesoUnitario"
         Me.txtPesoUnitario.Size = New System.Drawing.Size(113, 20)
-        Me.txtPesoUnitario.TabIndex = 5
+        Me.txtPesoUnitario.TabIndex = 0
         Me.txtPesoUnitario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'pnlUnidades
@@ -217,7 +217,7 @@ Partial Class FrmMedidas
         Me.pnlUnidades.Location = New System.Drawing.Point(5, 25)
         Me.pnlUnidades.Name = "pnlUnidades"
         Me.pnlUnidades.Size = New System.Drawing.Size(323, 124)
-        Me.pnlUnidades.TabIndex = 13
+        Me.pnlUnidades.TabIndex = 0
         '
         'BtnMedidaEstoque
         '
@@ -231,7 +231,7 @@ Partial Class FrmMedidas
         Me.BtnMedidaEstoque.Location = New System.Drawing.Point(6, 41)
         Me.BtnMedidaEstoque.Name = "BtnMedidaEstoque"
         Me.BtnMedidaEstoque.Size = New System.Drawing.Size(191, 23)
-        Me.BtnMedidaEstoque.TabIndex = 11
+        Me.BtnMedidaEstoque.TabIndex = 5
         Me.BtnMedidaEstoque.Text = "Unidade de Medida do Estoque"
         Me.BtnMedidaEstoque.UseVisualStyleBackColor = False
         '
@@ -247,34 +247,32 @@ Partial Class FrmMedidas
         Me.BtnlboMedidaCompra.Location = New System.Drawing.Point(6, 14)
         Me.BtnlboMedidaCompra.Name = "BtnlboMedidaCompra"
         Me.BtnlboMedidaCompra.Size = New System.Drawing.Size(191, 23)
-        Me.BtnlboMedidaCompra.TabIndex = 10
+        Me.BtnlboMedidaCompra.TabIndex = 4
         Me.BtnlboMedidaCompra.Text = "Unidade de Medida da Compra"
         Me.BtnlboMedidaCompra.UseVisualStyleBackColor = False
         '
         'cboMedidaEstoque
         '
-        Me.cboMedidaEstoque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMedidaEstoque.FormattingEnabled = True
         Me.cboMedidaEstoque.Location = New System.Drawing.Point(203, 41)
         Me.cboMedidaEstoque.Name = "cboMedidaEstoque"
         Me.cboMedidaEstoque.Size = New System.Drawing.Size(113, 21)
-        Me.cboMedidaEstoque.TabIndex = 9
+        Me.cboMedidaEstoque.TabIndex = 1
         '
         'cboMedidaCompra
         '
-        Me.cboMedidaCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMedidaCompra.FormattingEnabled = True
         Me.cboMedidaCompra.Location = New System.Drawing.Point(203, 14)
         Me.cboMedidaCompra.Name = "cboMedidaCompra"
         Me.cboMedidaCompra.Size = New System.Drawing.Size(113, 21)
-        Me.cboMedidaCompra.TabIndex = 8
+        Me.cboMedidaCompra.TabIndex = 0
         '
         'txtTaxaDeConversao
         '
         Me.txtTaxaDeConversao.Location = New System.Drawing.Point(203, 94)
         Me.txtTaxaDeConversao.Name = "txtTaxaDeConversao"
         Me.txtTaxaDeConversao.Size = New System.Drawing.Size(113, 20)
-        Me.txtTaxaDeConversao.TabIndex = 7
+        Me.txtTaxaDeConversao.TabIndex = 3
         Me.txtTaxaDeConversao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lboTaxaDeConversao
@@ -284,7 +282,7 @@ Partial Class FrmMedidas
         Me.lboTaxaDeConversao.Location = New System.Drawing.Point(8, 96)
         Me.lboTaxaDeConversao.Name = "lboTaxaDeConversao"
         Me.lboTaxaDeConversao.Size = New System.Drawing.Size(106, 16)
-        Me.lboTaxaDeConversao.TabIndex = 6
+        Me.lboTaxaDeConversao.TabIndex = 0
         Me.lboTaxaDeConversao.Text = "Taxa de Conversão"
         '
         'txtQtdCaixa
@@ -292,7 +290,7 @@ Partial Class FrmMedidas
         Me.txtQtdCaixa.Location = New System.Drawing.Point(203, 68)
         Me.txtQtdCaixa.Name = "txtQtdCaixa"
         Me.txtQtdCaixa.Size = New System.Drawing.Size(113, 20)
-        Me.txtQtdCaixa.TabIndex = 5
+        Me.txtQtdCaixa.TabIndex = 2
         Me.txtQtdCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
@@ -301,7 +299,7 @@ Partial Class FrmMedidas
         Me.Label10.Location = New System.Drawing.Point(13, 233)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(59, 13)
-        Me.Label10.TabIndex = 14
+        Me.Label10.TabIndex = 0
         Me.Label10.Text = "Dimensões"
         '
         'lboPesos
@@ -310,7 +308,7 @@ Partial Class FrmMedidas
         Me.lboPesos.Location = New System.Drawing.Point(14, 152)
         Me.lboPesos.Name = "lboPesos"
         Me.lboPesos.Size = New System.Drawing.Size(36, 13)
-        Me.lboPesos.TabIndex = 5
+        Me.lboPesos.TabIndex = 0
         Me.lboPesos.Text = "Pesos"
         '
         'lboUnidade
@@ -320,24 +318,24 @@ Partial Class FrmMedidas
         Me.lboUnidade.Location = New System.Drawing.Point(13, 15)
         Me.lboUnidade.Name = "lboUnidade"
         Me.lboUnidade.Size = New System.Drawing.Size(57, 16)
-        Me.lboUnidade.TabIndex = 15
+        Me.lboUnidade.TabIndex = 0
         Me.lboUnidade.Text = "Unidades"
         '
-        'Panel1
+        'pnlBotoes
         '
-        Me.Panel1.Controls.Add(Me.BtnVoltar)
-        Me.Panel1.Controls.Add(Me.BtnSalvar)
-        Me.Panel1.Location = New System.Drawing.Point(167, 368)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(161, 24)
-        Me.Panel1.TabIndex = 16
+        Me.pnlBotoes.Controls.Add(Me.BtnVoltar)
+        Me.pnlBotoes.Controls.Add(Me.BtnSalvar)
+        Me.pnlBotoes.Location = New System.Drawing.Point(167, 368)
+        Me.pnlBotoes.Name = "pnlBotoes"
+        Me.pnlBotoes.Size = New System.Drawing.Size(161, 24)
+        Me.pnlBotoes.TabIndex = 3
         '
         'BtnVoltar
         '
         Me.BtnVoltar.Location = New System.Drawing.Point(83, 1)
         Me.BtnVoltar.Name = "BtnVoltar"
         Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnVoltar.TabIndex = 6
+        Me.BtnVoltar.TabIndex = 1
         Me.BtnVoltar.Text = "Voltar"
         Me.BtnVoltar.UseVisualStyleBackColor = True
         '
@@ -346,7 +344,7 @@ Partial Class FrmMedidas
         Me.BtnSalvar.Location = New System.Drawing.Point(2, 1)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnSalvar.TabIndex = 5
+        Me.BtnSalvar.TabIndex = 0
         Me.BtnSalvar.Text = "Salvar"
         Me.BtnSalvar.UseVisualStyleBackColor = True
         '
@@ -355,7 +353,7 @@ Partial Class FrmMedidas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(333, 404)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.pnlBotoes)
         Me.Controls.Add(Me.lboUnidade)
         Me.Controls.Add(Me.lboPesos)
         Me.Controls.Add(Me.Label10)
@@ -372,7 +370,7 @@ Partial Class FrmMedidas
         Me.pnlPesos.PerformLayout()
         Me.pnlUnidades.ResumeLayout(False)
         Me.pnlUnidades.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
+        Me.pnlBotoes.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -397,7 +395,7 @@ Partial Class FrmMedidas
     Friend WithEvents txtComprimento As TextBox
     Friend WithEvents txtLargura As TextBox
     Friend WithEvents txtAltura As TextBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlBotoes As Panel
     Friend WithEvents BtnVoltar As Button
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents txtTaxaDeConversao As TextBox

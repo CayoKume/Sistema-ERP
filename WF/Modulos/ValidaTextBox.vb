@@ -1,18 +1,18 @@
 ﻿Module ValidaTextBox
 
-    Function SoLETRAS(ByVal KeyAscii As Integer) As Integer
+    Function SoLetras(ByVal KeyAscii As Integer) As Integer
         'TRANSFORMA LETRAS MINUSCULAS EM MAIÚSCULAS
         KeyAscii = Asc(UCase(Chr(KeyAscii)))
         ' INTERCEPTA UM CÓDIGO ASCII RECEBIDO E ADMITE SOMENTE LETRAS
         If InStr("AÃÁBCÇDEÉÊFGHIÍJKLMNOPQRSTUÚVWXYZ", Chr(KeyAscii)) = 0 Then
-            SoLETRAS = 0
+            SoLetras = 0
         Else
-            SoLETRAS = KeyAscii
+            SoLetras = KeyAscii
         End If
         ' TECLAS ADICIONAIS PERMITIDAS
-        If KeyAscii = 8 Then SoLETRAS = KeyAscii ' Backspace
-        If KeyAscii = 13 Then SoLETRAS = KeyAscii ' Enter
-        If KeyAscii = 32 Then SoLETRAS = KeyAscii ' Espace
+        If KeyAscii = 8 Then SoLetras = KeyAscii ' Backspace
+        If KeyAscii = 13 Then SoLetras = KeyAscii ' Enter
+        If KeyAscii = 32 Then SoLetras = KeyAscii ' Espace
     End Function
 
     Function SoNumeros(ByVal Keyascii As Short) As Short

@@ -71,6 +71,7 @@ Public Class FrmReferencias
     End Sub
 
     Private Sub FrmReferencias_Load(sender As Object, e As EventArgs) Handles Me.Load
+        txtReferencia.Select()
         cboCatalago.Items.Clear()
         For Each item In My.Settings.ConfiguraCboCatalago
             cboCatalago.Items.Add(item)

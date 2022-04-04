@@ -23,12 +23,12 @@ Partial Class FrmConfiguraCbo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlPrincipal = New System.Windows.Forms.Panel()
+        Me.cboCategorias = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnRemover = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.BtnAdicionar = New System.Windows.Forms.Button()
         Me.lboCategoria = New System.Windows.Forms.Label()
-        Me.cboCategorias = New System.Windows.Forms.ComboBox()
         Me.pnlPrincipal.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,6 +43,14 @@ Partial Class FrmConfiguraCbo
         Me.pnlPrincipal.Size = New System.Drawing.Size(316, 80)
         Me.pnlPrincipal.TabIndex = 1
         '
+        'cboCategorias
+        '
+        Me.cboCategorias.FormattingEnabled = True
+        Me.cboCategorias.Location = New System.Drawing.Point(120, 8)
+        Me.cboCategorias.Name = "cboCategorias"
+        Me.cboCategorias.Size = New System.Drawing.Size(180, 21)
+        Me.cboCategorias.TabIndex = 0
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.BtnRemover)
@@ -51,14 +59,15 @@ Partial Class FrmConfiguraCbo
         Me.Panel1.Location = New System.Drawing.Point(63, 40)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(238, 24)
-        Me.Panel1.TabIndex = 8
+        Me.Panel1.TabIndex = 1
+        Me.Panel1.TabStop = True
         '
         'BtnRemover
         '
         Me.BtnRemover.Location = New System.Drawing.Point(81, 1)
         Me.BtnRemover.Name = "BtnRemover"
         Me.BtnRemover.Size = New System.Drawing.Size(75, 23)
-        Me.BtnRemover.TabIndex = 7
+        Me.BtnRemover.TabIndex = 1
         Me.BtnRemover.Text = "Remover"
         Me.BtnRemover.UseVisualStyleBackColor = True
         '
@@ -67,7 +76,7 @@ Partial Class FrmConfiguraCbo
         Me.BtnVoltar.Location = New System.Drawing.Point(162, 1)
         Me.BtnVoltar.Name = "BtnVoltar"
         Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnVoltar.TabIndex = 6
+        Me.BtnVoltar.TabIndex = 2
         Me.BtnVoltar.Text = "Voltar"
         Me.BtnVoltar.UseVisualStyleBackColor = True
         '
@@ -76,7 +85,7 @@ Partial Class FrmConfiguraCbo
         Me.BtnAdicionar.Location = New System.Drawing.Point(0, 1)
         Me.BtnAdicionar.Name = "BtnAdicionar"
         Me.BtnAdicionar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAdicionar.TabIndex = 5
+        Me.BtnAdicionar.TabIndex = 0
         Me.BtnAdicionar.Text = "Adicionar"
         Me.BtnAdicionar.UseVisualStyleBackColor = True
         '
@@ -89,14 +98,6 @@ Partial Class FrmConfiguraCbo
         Me.lboCategoria.Size = New System.Drawing.Size(103, 25)
         Me.lboCategoria.TabIndex = 0
         Me.lboCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'cboCategorias
-        '
-        Me.cboCategorias.FormattingEnabled = True
-        Me.cboCategorias.Location = New System.Drawing.Point(120, 8)
-        Me.cboCategorias.Name = "cboCategorias"
-        Me.cboCategorias.Size = New System.Drawing.Size(180, 21)
-        Me.cboCategorias.TabIndex = 9
         '
         'FrmConfiguraCbo
         '

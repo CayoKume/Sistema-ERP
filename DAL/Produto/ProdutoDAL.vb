@@ -166,7 +166,7 @@ Public Class ProdutoDAL
         Return retorno
     End Function
 
-    Public Function SelecionaProduto(produtoDTO As ProdutoDTO) As ProdutoDTO
+    Public Function SelecionaProdutoPorId(produtoDTO As ProdutoDTO) As ProdutoDTO
         Dim conexao As New Conexao
         Dim retorno As New ProdutoDTO
         Dim dr As IDataReader
@@ -213,4 +213,101 @@ Public Class ProdutoDAL
         End Try
     End Function
 
+    Public Function SelecionaProdutoPorDescricao(produtoDTO As ProdutoDTO) As ProdutoDTO
+        Dim conexao As New Conexao
+        Dim retorno As New ProdutoDTO
+        Dim dr As IDataReader
+        Dim parram As New List(Of MySqlParameter)
+        Dim SQL As String
+
+        If produtoDTO.DescricaoProduto <> Nothing Then
+            parram.Add(New MySqlParameter("@Descricao_Produto", produtoDTO.DescricaoProduto))
+        End If
+
+        SQL = Nothing
+        SQL = SQL + " SELECT * From PRODUTO WHERE descricao_produto = '" & produtoDTO.DescricaoProduto & "'"
+
+        Try
+            dr = conexao.ExecuteDataReader(SQL, parram)
+            Do While dr.Read
+                If Not IsDBNull(dr("id_produto")) Then produtoDTO.IdProduto = dr("id_produto")
+                If Not IsDBNull(dr("descricao_produto")) Then produtoDTO.DescricaoProduto = dr("descricao_produto")
+                If Not IsDBNull(dr("classe_produto")) Then produtoDTO.ClasseProduto = dr("classe_produto")
+                If Not IsDBNull(dr("status_produto")) Then produtoDTO.StatusProduto = dr("status_produto")
+                If Not IsDBNull(dr("preco_compra_produto")) Then produtoDTO.PrecoCompraProduto = dr("preco_compra_produto")
+                If Not IsDBNull(dr("compra_imposto_produto")) Then produtoDTO.CompraImpostoProduto = dr("compra_imposto_produto")
+                If Not IsDBNull(dr("margem_lucro_produto")) Then produtoDTO.MargemLucroProduto = dr("margem_lucro_produto")
+                If Not IsDBNull(dr("preco_venda_produto")) Then produtoDTO.PrecoVendaProduto = dr("preco_venda_produto")
+                If Not IsDBNull(dr("estoque_disponivel_produto")) Then produtoDTO.EstoqueDisponivelProduto = dr("estoque_disponivel_produto")
+                If Not IsDBNull(dr("estoque_min_produto")) Then produtoDTO.EstoqueMinProduto = dr("estoque_min_produto")
+                If Not IsDBNull(dr("estoque_max_produto")) Then produtoDTO.EstoqueMaxProduto = dr("estoque_max_produto")
+                If Not IsDBNull(dr("estoque_vinculado_produto")) Then produtoDTO.EstoqueVinculadoProduto = dr("estoque_vinculado_produto")
+                If Not IsDBNull(dr("estoque_previsto_produto")) Then produtoDTO.EstoquePrevistoProduto = dr("estoque_previsto_produto")
+                If Not IsDBNull(dr("descricoes_detalhadas_produto")) Then produtoDTO.DescricoesDetalhadasProduto = dr("descricoes_detalhadas_produto")
+                If Not IsDBNull(dr("observacoes_produto")) Then produtoDTO.ObservacoesProduto = dr("observacoes_produto")
+                If Not IsDBNull(dr("tipo_produto_codigo_tipo_produto")) Then produtoDTO.CodigoTipoProduto = dr("tipo_produto_codigo_tipo_produto")
+                If Not IsDBNull(dr("categoria_produto_codigo_categoria_produto")) Then produtoDTO.CodigoCategoriaProduto = dr("categoria_produto_codigo_categoria_produto")
+                If Not IsDBNull(dr("medida_produto_id_medida_produto")) Then produtoDTO.IdMedidaProduto = dr("medida_produto_id_medida_produto")
+
+                retorno = produtoDTO
+            Loop
+
+            Return retorno
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexao.CloseConn()
+        End Try
+    End Function
+
+    Public Function SelecionaProdutoPorReferencia(referenciaDTO As ReferenciaDTO) As ProdutoDTO
+        Dim conexao As New Conexao
+        Dim produtoDTO As New ProdutoDTO
+        Dim dr As IDataReader
+        Dim parram As New List(Of MySqlParameter)
+        Dim SQL As String
+
+        If referenciaDTO.CodigoReferenciaProduto <> Nothing Then
+            parram.Add(New MySqlParameter("@Codigo_Referencia_Produto", referenciaDTO.CodigoReferenciaProduto))
+        End If
+
+        SQL = Nothing
+        SQL = SQL + " SELECT * From PRODUTO INNER JOIN REFERENCIA_PRODUTO"
+        SQL = SQL + " ON PRODUTO.ID_PRODUTO = PRODUTO_ID_PRODUTO"
+        SQL = SQL + " WHERE CODIGO_REFERENCIA_PRODUTO = '" & referenciaDTO.CodigoReferenciaProduto & "'"
+
+        Try
+            dr = conexao.ExecuteDataReader(SQL, parram)
+            Do While dr.Read
+                If Not IsDBNull(dr("id_produto")) Then produtoDTO.IdProduto = dr("id_produto")
+                If Not IsDBNull(dr("descricao_produto")) Then produtoDTO.DescricaoProduto = dr("descricao_produto")
+                If Not IsDBNull(dr("classe_produto")) Then produtoDTO.ClasseProduto = dr("classe_produto")
+                If Not IsDBNull(dr("status_produto")) Then produtoDTO.StatusProduto = dr("status_produto")
+                If Not IsDBNull(dr("preco_compra_produto")) Then produtoDTO.PrecoCompraProduto = dr("preco_compra_produto")
+                If Not IsDBNull(dr("compra_imposto_produto")) Then produtoDTO.CompraImpostoProduto = dr("compra_imposto_produto")
+                If Not IsDBNull(dr("margem_lucro_produto")) Then produtoDTO.MargemLucroProduto = dr("margem_lucro_produto")
+                If Not IsDBNull(dr("preco_venda_produto")) Then produtoDTO.PrecoVendaProduto = dr("preco_venda_produto")
+                If Not IsDBNull(dr("estoque_disponivel_produto")) Then produtoDTO.EstoqueDisponivelProduto = dr("estoque_disponivel_produto")
+                If Not IsDBNull(dr("estoque_min_produto")) Then produtoDTO.EstoqueMinProduto = dr("estoque_min_produto")
+                If Not IsDBNull(dr("estoque_max_produto")) Then produtoDTO.EstoqueMaxProduto = dr("estoque_max_produto")
+                If Not IsDBNull(dr("estoque_vinculado_produto")) Then produtoDTO.EstoqueVinculadoProduto = dr("estoque_vinculado_produto")
+                If Not IsDBNull(dr("estoque_previsto_produto")) Then produtoDTO.EstoquePrevistoProduto = dr("estoque_previsto_produto")
+                If Not IsDBNull(dr("descricoes_detalhadas_produto")) Then produtoDTO.DescricoesDetalhadasProduto = dr("descricoes_detalhadas_produto")
+                If Not IsDBNull(dr("observacoes_produto")) Then produtoDTO.ObservacoesProduto = dr("observacoes_produto")
+                If Not IsDBNull(dr("tipo_produto_codigo_tipo_produto")) Then produtoDTO.CodigoTipoProduto = dr("tipo_produto_codigo_tipo_produto")
+                If Not IsDBNull(dr("categoria_produto_codigo_categoria_produto")) Then produtoDTO.CodigoCategoriaProduto = dr("categoria_produto_codigo_categoria_produto")
+                If Not IsDBNull(dr("medida_produto_id_medida_produto")) Then ProdutoDTO.IdMedidaProduto = dr("medida_produto_id_medida_produto")
+            Loop
+
+            Return produtoDTO
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexao.CloseConn()
+        End Try
+    End Function
+
+    Public Function SelecionaTodosProdutos(produtoDTO As ProdutoDTO) As DataSet
+
+    End Function
 End Class
