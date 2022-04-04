@@ -391,6 +391,7 @@ Partial Class FrmProdutos
         'txtEstoquePrevisto
         '
         Me.txtEstoquePrevisto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEstoquePrevisto.Enabled = False
         Me.txtEstoquePrevisto.Location = New System.Drawing.Point(619, 14)
         Me.txtEstoquePrevisto.Name = "txtEstoquePrevisto"
         Me.txtEstoquePrevisto.Size = New System.Drawing.Size(50, 20)
@@ -400,6 +401,7 @@ Partial Class FrmProdutos
         'txtEstoqueDisponivel
         '
         Me.txtEstoqueDisponivel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEstoqueDisponivel.Enabled = False
         Me.txtEstoqueDisponivel.Location = New System.Drawing.Point(73, 14)
         Me.txtEstoqueDisponivel.Name = "txtEstoqueDisponivel"
         Me.txtEstoqueDisponivel.Size = New System.Drawing.Size(50, 20)
@@ -427,6 +429,7 @@ Partial Class FrmProdutos
         'txtEstoqueVinculado
         '
         Me.txtEstoqueVinculado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtEstoqueVinculado.Enabled = False
         Me.txtEstoqueVinculado.Location = New System.Drawing.Point(490, 14)
         Me.txtEstoqueVinculado.Name = "txtEstoqueVinculado"
         Me.txtEstoqueVinculado.Size = New System.Drawing.Size(50, 20)
