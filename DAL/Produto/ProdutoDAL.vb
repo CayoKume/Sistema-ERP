@@ -203,6 +203,7 @@ Public Class ProdutoDAL
                 If Not IsDBNull(dr("estoque_previsto_produto")) Then produtoDTO.EstoquePrevistoProduto = dr("estoque_previsto_produto")
                 If Not IsDBNull(dr("descricoes_detalhadas_produto")) Then produtoDTO.DescricoesDetalhadasProduto = dr("descricoes_detalhadas_produto")
                 If Not IsDBNull(dr("observacoes_produto")) Then produtoDTO.ObservacoesProduto = dr("observacoes_produto")
+                If Not IsDBNull(dr("imagem_produto")) Then produtoDTO.ImagemProduto = dr("imagem_produto")
                 If Not IsDBNull(dr("tipo_produto_codigo_tipo_produto")) Then produtoDTO.CodigoTipoProduto = dr("tipo_produto_codigo_tipo_produto")
                 If Not IsDBNull(dr("categoria_produto_codigo_categoria_produto")) Then produtoDTO.CodigoCategoriaProduto = dr("categoria_produto_codigo_categoria_produto")
                 If Not IsDBNull(dr("medida_produto_id_medida_produto")) Then produtoDTO.IdMedidaProduto = dr("medida_produto_id_medida_produto")
@@ -250,6 +251,7 @@ Public Class ProdutoDAL
                 If Not IsDBNull(dr("estoque_previsto_produto")) Then produtoDTO.EstoquePrevistoProduto = dr("estoque_previsto_produto")
                 If Not IsDBNull(dr("descricoes_detalhadas_produto")) Then produtoDTO.DescricoesDetalhadasProduto = dr("descricoes_detalhadas_produto")
                 If Not IsDBNull(dr("observacoes_produto")) Then produtoDTO.ObservacoesProduto = dr("observacoes_produto")
+                If Not IsDBNull(dr("imagem_produto")) Then produtoDTO.ImagemProduto = dr("imagem_produto")
                 If Not IsDBNull(dr("tipo_produto_codigo_tipo_produto")) Then produtoDTO.CodigoTipoProduto = dr("tipo_produto_codigo_tipo_produto")
                 If Not IsDBNull(dr("categoria_produto_codigo_categoria_produto")) Then produtoDTO.CodigoCategoriaProduto = dr("categoria_produto_codigo_categoria_produto")
                 If Not IsDBNull(dr("medida_produto_id_medida_produto")) Then produtoDTO.IdMedidaProduto = dr("medida_produto_id_medida_produto")
@@ -299,6 +301,7 @@ Public Class ProdutoDAL
                 If Not IsDBNull(dr("estoque_previsto_produto")) Then produtoDTO.EstoquePrevistoProduto = dr("estoque_previsto_produto")
                 If Not IsDBNull(dr("descricoes_detalhadas_produto")) Then produtoDTO.DescricoesDetalhadasProduto = dr("descricoes_detalhadas_produto")
                 If Not IsDBNull(dr("observacoes_produto")) Then produtoDTO.ObservacoesProduto = dr("observacoes_produto")
+                If Not IsDBNull(dr("imagem_produto")) Then produtoDTO.ImagemProduto = dr("imagem_produto")
                 If Not IsDBNull(dr("tipo_produto_codigo_tipo_produto")) Then produtoDTO.CodigoTipoProduto = dr("tipo_produto_codigo_tipo_produto")
                 If Not IsDBNull(dr("categoria_produto_codigo_categoria_produto")) Then produtoDTO.CodigoCategoriaProduto = dr("categoria_produto_codigo_categoria_produto")
                 If Not IsDBNull(dr("medida_produto_id_medida_produto")) Then ProdutoDTO.IdMedidaProduto = dr("medida_produto_id_medida_produto")
@@ -312,7 +315,50 @@ Public Class ProdutoDAL
         End Try
     End Function
 
-    Public Function SelecionaTodosProdutos(produtoDTO As ProdutoDTO) As DataSet
+    Public Function SelecionaTodosProdutos(produtoDTO As ProdutoDTO) As DataTable
+        Dim conexao As New Conexao
+        Dim dt As New DataTable
+        Dim parram As New List(Of MySqlParameter)
+        Dim SQL As String
 
+        SQL = Nothing
+
+        If produtoDTO.DescricaoProduto = Nothing And produtoDTO.StatusProduto = Nothing And produtoDTO.CodigoTipoProduto = Nothing And produtoDTO.CodigoCategoriaProduto = Nothing Then
+            SQL = SQL + " SELECT * From PRODUTO"
+        Else
+            SQL = SQL + " SELECT * From PRODUTO WHERE"
+        End If
+
+        If produtoDTO.DescricaoProduto <> Nothing Then
+            SQL = SQL + " descricao_produto = '" & produtoDTO.DescricaoProduto & "'"
+        ElseIf produtoDTO.DescricaoProduto <> Nothing And (produtoDTO.StatusProduto <> Nothing Or produtoDTO.CodigoTipoProduto <> Nothing Or produtoDTO.CodigoCategoriaProduto <> Nothing) Then
+            SQL = SQL + " descricao_produto = '" & produtoDTO.DescricaoProduto & "' AND"
+        End If
+
+        If produtoDTO.StatusProduto <> Nothing Then
+            SQL = SQL + " status_produto = '" & produtoDTO.StatusProduto & "'"
+        ElseIf produtoDTO.StatusProduto <> Nothing And (produtoDTO.CodigoTipoProduto <> Nothing Or produtoDTO.CodigoCategoriaProduto <> Nothing) Then
+            SQL = SQL + " status_produto = '" & produtoDTO.StatusProduto & "' AND"
+        End If
+
+        If produtoDTO.CodigoTipoProduto <> Nothing Then
+            SQL = SQL + " tipo_produto_codigo_tipo_produto = '" & produtoDTO.CodigoTipoProduto & "'"
+        ElseIf produtoDTO.CodigoTipoProduto <> Nothing And (produtoDTO.CodigoCategoriaProduto <> Nothing) Then
+            SQL = SQL + " tipo_produto_codigo_tipo_produto = '" & produtoDTO.CodigoTipoProduto & "' AND"
+        End If
+
+        If produtoDTO.CodigoCategoriaProduto <> Nothing Then
+            SQL = SQL + " categoria_produto_codigo_categoria_produto = '" & produtoDTO.CodigoCategoriaProduto & "'"
+        End If
+
+        Try
+            dt = conexao.ExecuteDataTable(SQL)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexao.CloseConn()
+        End Try
+
+        Return dt
     End Function
 End Class

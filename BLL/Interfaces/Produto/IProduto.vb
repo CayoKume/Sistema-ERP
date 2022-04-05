@@ -7,5 +7,5 @@ Public Interface IProduto
     Function SelectProdutoById(produtoDTO As ProdutoDTO) As ProdutoDTO
     Function SelectProdutoByDescricao(produtoDTO As ProdutoDTO) As ProdutoDTO
     Function SelectProdutoByReferencia(referenciaDTO As ReferenciaDTO) As ProdutoDTO
-    Function SelectAllProdutos(produtoDTO As ProdutoDTO) As DataSet
+    Function SelectAllProdutos(produtoDTO As ProdutoDTO) As DataTable
 End Interface

@@ -42,7 +42,6 @@ Public Class ProdutoBLL
 
     Public Function SelectProdutoById(produtoDTO As ProdutoDTO) As ProdutoDTO Implements IProduto.SelectProdutoById
         Dim ProdutoDAL As New ProdutoDAL
-
         Try
             ProdutoDAL.SelecionaProdutoPorId(produtoDTO)
         Catch ex As Exception
@@ -54,7 +53,6 @@ Public Class ProdutoBLL
 
     Public Function SelectProdutoByDescricao(produtoDTO As ProdutoDTO) As ProdutoDTO Implements IProduto.SelectProdutoByDescricao
         Dim ProdutoDAL As New ProdutoDAL
-
         Try
             ProdutoDAL.SelecionaProdutoPorDescricao(produtoDTO)
         Catch ex As Exception
@@ -76,20 +74,16 @@ Public Class ProdutoBLL
         Return produtoDTO
     End Function
 
+    Public Function SelectAllProdutos(produtoDTO As ProdutoDTO) As DataTable Implements IProduto.SelectAllProdutos
+        Dim produtoDAL As New ProdutoDAL
+        Dim dt As New DataTable
+        Try
+            dt = produtoDAL.SelecionaTodosProdutos(produtoDTO)
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
 
-    Public Function SelectAllProdutos(Produto As ProdutoDTO) As DataSet Implements IProduto.SelectAllProdutos
-        'Dim ds As New DataSet
-        'Dim conexao As New Conexao
-
-        'Try
-        '    ds = conexao.ExecuteDataSet(Sql, parametros)
-        'Catch ex As Exception
-        '    Throw ex
-        'Finally
-        '    conexao.CloseConn()
-        'End Try
-
-        'Return ds
+        Return dt
     End Function
 
 End Class

@@ -1,5 +1,4 @@
-﻿
-Imports DTO
+﻿Imports DTO
 Imports BLL
 Imports System.IO
 
@@ -99,7 +98,11 @@ Public Class FrmProdutos
     End Sub
 
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
-        PesquisarProduto()
+        If txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing Then
+            PesquisarProduto()
+        Else
+            FrmBuscaProduto.Show()
+        End If
     End Sub
 
     Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
@@ -324,6 +327,18 @@ Public Class FrmProdutos
         txtEstoquePrevisto.Text = produtoDTO.EstoquePrevistoProduto
         txtDescricaoDetalhada.Text = produtoDTO.DescricoesDetalhadasProduto
         txtObservacoes.Text = produtoDTO.ObservacoesProduto
+        If produtoDTO.ImagemProduto IsNot Nothing Then
+            Dim ImgStream As MemoryStream = New MemoryStream(CType(produtoDTO.ImagemProduto, Byte()))
+            Dim bm As New Bitmap(ImgStream)
+
+            Dim largura As Double = bm.Width
+            Dim altura As Double = bm.Height
+
+            Dim proporcao As Double = 156 / largura
+            Dim novaAltura As Double = (proporcao * altura)
+
+            pctboxProduto.Image = RedimensionarImagem(bm, New Size(156, novaAltura))
+        End If
         cboTipoProduto.SelectedIndex = cboTipoProduto.FindStringExact(produtoDTO.CodigoTipoProduto)
         cboCategoria.SelectedIndex = cboCategoria.FindStringExact(produtoDTO.CodigoCategoriaProduto)
         IdMedidaProduto = produtoDTO.IdMedidaProduto
@@ -535,7 +550,11 @@ Public Class FrmProdutos
         If KeyAscii = 0 Then
             e.Handled = True
         ElseIf e.KeyChar = Chr(13) Then
-            PesquisarProduto()
+            If txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing Then
+                PesquisarProduto()
+            Else
+                FrmBuscaProduto.Show()
+            End If
         End If
     End Sub
 
@@ -604,14 +623,18 @@ Public Class FrmProdutos
     End Sub
 
     Private Sub txtDescricao_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescricao.KeyPress
-        If e.KeyChar = Chr(13) Then
+        If e.KeyChar = Chr(13) And (txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing) Then
             PesquisarProduto()
+        Else
+            FrmBuscaProduto.Show()
         End If
     End Sub
 
     Private Sub txtReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtReferencia.KeyPress
-        If e.KeyChar = Chr(13) Then
+        If e.KeyChar = Chr(13) And (txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing) Then
             PesquisarProduto()
+        Else
+            FrmBuscaProduto.Show()
         End If
     End Sub
 
