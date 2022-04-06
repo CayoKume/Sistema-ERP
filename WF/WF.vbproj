@@ -85,6 +85,12 @@
     <Compile Include="Forms\FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Produto\FrmBuscaRequisicao.Designer.vb">
+      <DependentUpon>FrmBuscaRequisicao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmBuscaRequisicao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Produto\FrmConfiguraGridView.Designer.vb">
       <DependentUpon>FrmConfiguraGridView.vb</DependentUpon>
     </Compile>
@@ -101,6 +107,12 @@
       <DependentUpon>FrmConfiguraEtiquetas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Produto\FrmConfiguraEtiquetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmRequisicoes.Designer.vb">
+      <DependentUpon>FrmRequisicoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmRequisicoes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\ValidaTextBox.vb" />
@@ -174,12 +186,6 @@
     <Compile Include="Forms\Produto\FrmReferencias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Produto\FrmRelacionamentos.Designer.vb">
-      <DependentUpon>FrmRelacionamentos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Produto\FrmRelacionamentos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\Produto\FrmServicos.Designer.vb">
       <DependentUpon>FrmServicos.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
     <EmbeddedResource Include="Forms\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produto\FrmBuscaRequisicao.resx">
+      <DependentUpon>FrmBuscaRequisicao.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmConfiguraEtiquetas.resx">
       <DependentUpon>FrmConfiguraEtiquetas.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmEtiquetas.resx">
       <DependentUpon>FrmEtiquetas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produto\FrmRequisicoes.resx">
+      <DependentUpon>FrmRequisicoes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -235,9 +247,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmReferencias.resx">
       <DependentUpon>FrmReferencias.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Produto\FrmRelacionamentos.resx">
-      <DependentUpon>FrmRelacionamentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmServicos.resx">
       <DependentUpon>FrmServicos.vb</DependentUpon>

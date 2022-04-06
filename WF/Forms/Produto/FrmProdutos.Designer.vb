@@ -94,10 +94,10 @@ Partial Class FrmProdutos
         Me.RefernciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpostosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RelacionamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EtiquetasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AtivosFixosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RequisiçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlPrincipal.SuspendLayout()
         Me.pnlFormularios.SuspendLayout()
         Me.pnlDescricoes.SuspendLayout()
@@ -850,7 +850,7 @@ Partial Class FrmProdutos
         '
         'Menu
         '
-        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutoToolStripMenuItem, Me.ServiçosToolStripMenuItem, Me.RefernciasToolStripMenuItem, Me.MedidasToolStripMenuItem, Me.ImpostosToolStripMenuItem, Me.RelacionamentosToolStripMenuItem, Me.EtiquetasToolStripMenuItem, Me.AtivosFixosToolStripMenuItem, Me.RelatóriosToolStripMenuItem})
+        Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProdutoToolStripMenuItem, Me.ServiçosToolStripMenuItem, Me.RefernciasToolStripMenuItem, Me.MedidasToolStripMenuItem, Me.ImpostosToolStripMenuItem, Me.EtiquetasToolStripMenuItem, Me.AtivosFixosToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.RequisiçõesToolStripMenuItem})
         Me.Menu.Location = New System.Drawing.Point(0, 0)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(881, 24)
@@ -887,12 +887,6 @@ Partial Class FrmProdutos
         Me.ImpostosToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.ImpostosToolStripMenuItem.Text = "Impostos"
         '
-        'RelacionamentosToolStripMenuItem
-        '
-        Me.RelacionamentosToolStripMenuItem.Name = "RelacionamentosToolStripMenuItem"
-        Me.RelacionamentosToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
-        Me.RelacionamentosToolStripMenuItem.Text = "Relacionamentos"
-        '
         'EtiquetasToolStripMenuItem
         '
         Me.EtiquetasToolStripMenuItem.Name = "EtiquetasToolStripMenuItem"
@@ -910,6 +904,12 @@ Partial Class FrmProdutos
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
+        '
+        'RequisiçõesToolStripMenuItem
+        '
+        Me.RequisiçõesToolStripMenuItem.Name = "RequisiçõesToolStripMenuItem"
+        Me.RequisiçõesToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.RequisiçõesToolStripMenuItem.Text = "Requisições"
         '
         'FrmProdutos
         '
@@ -948,7 +948,6 @@ Partial Class FrmProdutos
     Friend WithEvents ProdutoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MedidasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ImpostosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RelacionamentosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ServiçosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RefernciasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EtiquetasToolStripMenuItem As ToolStripMenuItem
@@ -1019,4 +1018,5 @@ Partial Class FrmProdutos
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents BtnExcluir As Button
     Friend WithEvents BtnSalvar As Button
+    Friend WithEvents RequisiçõesToolStripMenuItem As ToolStripMenuItem
 End Class

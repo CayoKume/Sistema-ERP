@@ -29,9 +29,9 @@ Partial Class FrmReferencias
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.pnlBotoes = New System.Windows.Forms.Panel()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.btnCatalago = New System.Windows.Forms.Button()
         Me.pnlFormulario = New System.Windows.Forms.Panel()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
         CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBotoes.SuspendLayout()
         Me.pnlFormulario.SuspendLayout()
@@ -58,6 +58,7 @@ Partial Class FrmReferencias
         'cboCatalago
         '
         Me.cboCatalago.DisplayMember = "Código de Barras"
+        Me.cboCatalago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCatalago.FormattingEnabled = True
         Me.cboCatalago.Items.AddRange(New Object() {"Código de Barras", "Código Interno", "Código Fornecedor"})
         Me.cboCatalago.Location = New System.Drawing.Point(98, 38)
@@ -105,6 +106,15 @@ Partial Class FrmReferencias
         Me.pnlBotoes.TabIndex = 1
         Me.pnlBotoes.TabStop = True
         '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Location = New System.Drawing.Point(82, 1)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnExcluir.TabIndex = 2
+        Me.BtnExcluir.Text = "Excluir"
+        Me.BtnExcluir.UseVisualStyleBackColor = True
+        '
         'btnCatalago
         '
         Me.btnCatalago.Location = New System.Drawing.Point(13, 36)
@@ -126,15 +136,6 @@ Partial Class FrmReferencias
         Me.pnlFormulario.Size = New System.Drawing.Size(328, 292)
         Me.pnlFormulario.TabIndex = 0
         Me.pnlFormulario.TabStop = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.Location = New System.Drawing.Point(82, 1)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnExcluir.TabIndex = 2
-        Me.BtnExcluir.Text = "Excluir"
-        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'FrmReferencias
         '

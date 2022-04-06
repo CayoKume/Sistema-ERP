@@ -49,8 +49,8 @@ Public Class FrmProdutos
         FrmImpostos.Show()
     End Sub
 
-    Private Sub RelacionamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelacionamentosToolStripMenuItem.Click
-        FrmRelacionamentos.Show()
+    Private Sub RequisiçõesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RequisiçõesToolStripMenuItem.Click
+        FrmRequisicoes.Show()
     End Sub
 #End Region
 

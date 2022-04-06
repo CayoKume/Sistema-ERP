@@ -265,6 +265,7 @@ Public Class FrmBuscaProduto
     End Sub
 
     Private Sub dgvBuscaProdutos_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBuscaProdutos.RowHeaderMouseClick
+        pctboxProduto.Image = Nothing
         If dgvBuscaProdutos.CurrentRow.Cells(15).Value IsNot DBNull.Value Then
             Dim ImgStream As MemoryStream = New MemoryStream(CType(dgvBuscaProdutos.CurrentRow.Cells(15).Value, Byte()))
             Dim bm As New Bitmap(ImgStream)
