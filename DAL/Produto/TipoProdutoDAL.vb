@@ -111,4 +111,5 @@ Public Class TipoProdutoDAL
 
         Return retorno
     End Function
+
 End Class

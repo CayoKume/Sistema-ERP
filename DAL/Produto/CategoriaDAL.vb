@@ -104,4 +104,5 @@ Public Class CategoriaDAL
 
         Return retorno
     End Function
+
 End Class

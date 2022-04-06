@@ -165,6 +165,8 @@ Partial Class FrmBuscaProduto
         '
         'dgvBuscaProdutos
         '
+        Me.dgvBuscaProdutos.AllowUserToAddRows = False
+        Me.dgvBuscaProdutos.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -241,6 +243,7 @@ Partial Class FrmBuscaProduto
         '
         'txtDescricao
         '
+        Me.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDescricao.Location = New System.Drawing.Point(15, 65)
         Me.txtDescricao.Name = "txtDescricao"
         Me.txtDescricao.Size = New System.Drawing.Size(150, 20)
@@ -248,6 +251,7 @@ Partial Class FrmBuscaProduto
         '
         'txtReferencia
         '
+        Me.txtReferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtReferencia.Location = New System.Drawing.Point(171, 65)
         Me.txtReferencia.Name = "txtReferencia"
         Me.txtReferencia.Size = New System.Drawing.Size(100, 20)

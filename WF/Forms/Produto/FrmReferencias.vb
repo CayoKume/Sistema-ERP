@@ -25,28 +25,26 @@ Public Class FrmReferencias
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
-        TrataVariavel()
-        Dim referenciaDTO As New ReferenciaDTO
-        referenciaDTO.CodigoReferenciaProduto = Referencia
-        referenciaDTO.CatalagoReferencia = Catalago
-        referenciaDTO.IdProduto = FrmProdutos.IdProduto 'não sei se está certo
+        SalvarReferencia()
+    End Sub
 
-        Dim referenciaBLL As New ReferenciaBLL
-        Try
-            If referenciaBLL.InsertReferencia(referenciaDTO)(1) = True Then
-                MessageBox.Show("Referencia cadastrada com sucesso!")
-            Else
-                MessageBox.Show("Problema ao cadastrar referencia!")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+        ExcluirReferencia()
     End Sub
 #End Region
 
 #End Region
 
 #Region "MÉTODOS"
+    Private Sub FrmReferencias_Load(sender As Object, e As EventArgs) Handles Me.Load
+        txtReferencia.Select()
+        cboCatalago.Items.Clear()
+        For Each item In My.Settings.ConfiguraCboCatalago
+            cboCatalago.Items.Add(item)
+        Next
+        PesquisaReferencia()
+    End Sub
+
     Private Sub TrataVariavel()
         Dim Vetor() As String = {txtReferencia.Text, cboCatalago.Text}
         Dim NewVetor() As String
@@ -70,13 +68,73 @@ Public Class FrmReferencias
         End If
     End Sub
 
-    Private Sub FrmReferencias_Load(sender As Object, e As EventArgs) Handles Me.Load
-        txtReferencia.Select()
-        cboCatalago.Items.Clear()
-        For Each item In My.Settings.ConfiguraCboCatalago
-            cboCatalago.Items.Add(item)
-        Next
+    Private Sub SalvarReferencia()
+        TrataVariavel()
+        Dim referenciaDTO As New ReferenciaDTO
+        Dim flag As Boolean = False
+        referenciaDTO.CodigoReferenciaProduto = Referencia
 
+        Dim referenciaBLL As New ReferenciaBLL
+        If referenciaBLL.SelectReferencia(referenciaDTO).Count <> 0 Then
+            For Each objeto In referenciaBLL.SelectReferencia(referenciaDTO)
+                If (objeto.CodigoReferenciaProduto.Equals(Referencia) = True And objeto.CatalagoReferencia.Equals(Catalago) <> True) Or (objeto.CodigoReferenciaProduto.Equals(Referencia) <> True And objeto.CatalagoReferencia.Equals(Catalago) <> True) Then
+                    flag = True
+                ElseIf objeto.CodigoReferenciaProduto.Equals(Referencia) = True And objeto.CatalagoReferencia.Equals(Catalago) = True Then
+                    flag = False
+                    Exit For
+                End If
+            Next
+            If flag = True Then
+                referenciaDTO.CodigoReferenciaProduto = Referencia
+                referenciaDTO.CatalagoReferencia = Catalago
+                Try
+                    If referenciaBLL.InsertReferencia(referenciaDTO)(1) = True Then
+                        MessageBox.Show("Referencia cadastrada com sucesso!")
+                    Else
+                        MessageBox.Show("Problema ao cadastrar referencia!")
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+                dgvResultados.DataSource = Nothing
+                PesquisaReferencia()
+            Else
+                MessageBox.Show("Referência já cadastradas para o catálago ou produto selecionados!.")
+            End If
+        Else
+            referenciaDTO.CodigoReferenciaProduto = Referencia
+            referenciaDTO.CatalagoReferencia = Catalago
+            Try
+                If referenciaBLL.InsertReferencia(referenciaDTO)(1) = True Then
+                    MessageBox.Show("Referencia cadastrada com sucesso!")
+                Else
+                    MessageBox.Show("Problema ao cadastrar referencia!")
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+            dgvResultados.DataSource = Nothing
+            PesquisaReferencia()
+        End If
+    End Sub
+
+    Private Sub ExcluirReferencia()
+        Dim referenciaDTO As New ReferenciaDTO
+        referenciaDTO.CodigoReferenciaProduto = dgvResultados.CurrentRow.Cells(1).Value
+        Dim referenciaBLL As New ReferenciaBLL
+        Try
+            If referenciaBLL.DeleteReferencia(referenciaDTO)(1) = True Then
+                MessageBox.Show("Referência excluida com sucesso!")
+            Else
+                MessageBox.Show("Problema ao excluir referência!")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        LimpaCampos()
+    End Sub
+
+    Private Sub PesquisaReferencia()
         Dim referenciaDTO As New ReferenciaDTO
         referenciaDTO.IdProduto = FrmProdutos.IdProduto
 
@@ -95,6 +153,12 @@ Public Class FrmReferencias
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub LimpaCampos()
+        txtReferencia.Text = Nothing
+        cboCatalago.SelectedIndex = -1
+        dgvResultados.DataSource = Nothing
     End Sub
 #End Region
 

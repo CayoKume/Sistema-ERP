@@ -265,16 +265,152 @@ Public Class FrmBuscaProduto
     End Sub
 
     Private Sub dgvBuscaProdutos_RowHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBuscaProdutos.RowHeaderMouseClick
-        Dim ImgStream As MemoryStream = New MemoryStream(CType(dgvBuscaProdutos.CurrentRow.Cells(15).Value, Byte()))
-        Dim bm As New Bitmap(ImgStream)
+        If dgvBuscaProdutos.CurrentRow.Cells(15).Value IsNot DBNull.Value Then
+            Dim ImgStream As MemoryStream = New MemoryStream(CType(dgvBuscaProdutos.CurrentRow.Cells(15).Value, Byte()))
+            Dim bm As New Bitmap(ImgStream)
 
-        Dim largura As Double = bm.Width
-        Dim altura As Double = bm.Height
+            Dim largura As Double = bm.Width
+            Dim altura As Double = bm.Height
 
-        Dim proporcao As Double = 156 / largura
-        Dim novaAltura As Double = (proporcao * altura)
+            Dim proporcao As Double = 156 / largura
+            Dim novaAltura As Double = (proporcao * altura)
 
-        pctboxProduto.Image = RedimensionarImagem(bm, New Size(156, novaAltura))
+            pctboxProduto.Image = RedimensionarImagem(bm, New Size(156, novaAltura))
+        End If
+    End Sub
+
+    Private Sub dgvBuscaProdutos_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBuscaProdutos.RowHeaderMouseDoubleClick
+        Dim produtoDTO As New ProdutoDTO
+        produtoDTO.IdProduto = dgvBuscaProdutos.CurrentRow.Cells(0).Value
+        produtoDTO.DescricaoProduto = dgvBuscaProdutos.CurrentRow.Cells(1).Value
+        produtoDTO.ClasseProduto = dgvBuscaProdutos.CurrentRow.Cells(2).Value
+        If dgvBuscaProdutos.CurrentRow.Cells(3).Value IsNot DBNull.Value Then
+            produtoDTO.StatusProduto = dgvBuscaProdutos.CurrentRow.Cells(3).Value
+        Else
+            produtoDTO.StatusProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(4).Value IsNot DBNull.Value Then
+            produtoDTO.PrecoCompraProduto = dgvBuscaProdutos.CurrentRow.Cells(4).Value
+        Else
+            produtoDTO.PrecoCompraProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(5).Value IsNot DBNull.Value Then
+            produtoDTO.CompraImpostoProduto = dgvBuscaProdutos.CurrentRow.Cells(5).Value
+        Else
+            produtoDTO.CompraImpostoProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(6).Value IsNot DBNull.Value Then
+            produtoDTO.MargemLucroProduto = dgvBuscaProdutos.CurrentRow.Cells(6).Value
+        Else
+            produtoDTO.MargemLucroProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(7).Value IsNot DBNull.Value Then
+            produtoDTO.PrecoVendaProduto = dgvBuscaProdutos.CurrentRow.Cells(7).Value
+        Else
+            produtoDTO.PrecoVendaProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(8).Value IsNot DBNull.Value Then
+            produtoDTO.EstoqueDisponivelProduto = dgvBuscaProdutos.CurrentRow.Cells(8).Value
+        Else
+            produtoDTO.EstoqueDisponivelProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(9).Value IsNot DBNull.Value Then
+            produtoDTO.EstoqueMinProduto = dgvBuscaProdutos.CurrentRow.Cells(9).Value
+        Else
+            produtoDTO.EstoqueMinProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(10).Value IsNot DBNull.Value Then
+            produtoDTO.EstoqueMaxProduto = dgvBuscaProdutos.CurrentRow.Cells(10).Value
+        Else
+            produtoDTO.EstoqueMaxProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(11).Value IsNot DBNull.Value Then
+            produtoDTO.EstoqueVinculadoProduto = dgvBuscaProdutos.CurrentRow.Cells(11).Value
+        Else
+            produtoDTO.EstoqueVinculadoProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(12).Value IsNot DBNull.Value Then
+            produtoDTO.EstoquePrevistoProduto = dgvBuscaProdutos.CurrentRow.Cells(12).Value
+        Else
+            produtoDTO.EstoquePrevistoProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(13).Value IsNot DBNull.Value Then
+            produtoDTO.DescricoesDetalhadasProduto = dgvBuscaProdutos.CurrentRow.Cells(13).Value
+        Else
+            produtoDTO.DescricoesDetalhadasProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(14).Value IsNot DBNull.Value Then
+            produtoDTO.ObservacoesProduto = dgvBuscaProdutos.CurrentRow.Cells(14).Value
+        Else
+            produtoDTO.ObservacoesProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(15).Value IsNot DBNull.Value Then
+            produtoDTO.ImagemProduto = dgvBuscaProdutos.CurrentRow.Cells(15).Value
+        Else
+            produtoDTO.ImagemProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(16).Value IsNot DBNull.Value Then
+            produtoDTO.CodigoCategoriaProduto = dgvBuscaProdutos.CurrentRow.Cells(16).Value
+        Else
+            produtoDTO.CodigoCategoriaProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(17).Value IsNot DBNull.Value Then
+            produtoDTO.CodigoTipoProduto = dgvBuscaProdutos.CurrentRow.Cells(17).Value
+        Else
+            produtoDTO.CodigoTipoProduto = Nothing
+        End If
+        If dgvBuscaProdutos.CurrentRow.Cells(18).Value IsNot DBNull.Value Then
+            produtoDTO.IdMedidaProduto = dgvBuscaProdutos.CurrentRow.Cells(18).Value
+        Else
+            produtoDTO.IdMedidaProduto = Nothing
+        End If
+
+        FrmProdutos.txtCodigo.Text = produtoDTO.IdProduto
+        FrmProdutos.txtDescricao.Text = produtoDTO.DescricaoProduto
+        If produtoDTO.ClasseProduto = "Matéria Prima" Then
+            FrmProdutos.rdoMateriaPrima.Checked = True
+        ElseIf produtoDTO.ClasseProduto = "Produto Acabado" Then
+            FrmProdutos.rdoProdutoAcabado.Checked = True
+        End If
+        FrmProdutos.cboStatus.SelectedIndex = cboStatus.FindStringExact(produtoDTO.StatusProduto)
+        FrmProdutos.txtPrecoCompra.Text = produtoDTO.PrecoCompraProduto
+        FrmProdutos.txtCompraImposto.Text = produtoDTO.CompraImpostoProduto
+        FrmProdutos.cboMargemLucro.Text = produtoDTO.MargemLucroProduto
+        FrmProdutos.txtPrecoVenda.Text = produtoDTO.PrecoVendaProduto
+        FrmProdutos.txtEstoqueDisponivel.Text = produtoDTO.EstoqueDisponivelProduto
+        FrmProdutos.txtEstoqueMin.Text = produtoDTO.EstoqueMinProduto
+        FrmProdutos.txtEstoqueMax.Text = produtoDTO.EstoqueMaxProduto
+        FrmProdutos.txtEstoqueVinculado.Text = produtoDTO.EstoqueVinculadoProduto
+        FrmProdutos.txtEstoquePrevisto.Text = produtoDTO.EstoquePrevistoProduto
+        FrmProdutos.txtDescricaoDetalhada.Text = produtoDTO.DescricoesDetalhadasProduto
+        FrmProdutos.txtObservacoes.Text = produtoDTO.ObservacoesProduto
+        If produtoDTO.ImagemProduto IsNot Nothing Then
+            Dim ImgStream As MemoryStream = New MemoryStream(CType(produtoDTO.ImagemProduto, Byte()))
+            Dim bm As New Bitmap(ImgStream)
+
+            Dim largura As Double = bm.Width
+            Dim altura As Double = bm.Height
+
+            Dim proporcao As Double = 156 / largura
+            Dim novaAltura As Double = (proporcao * altura)
+
+            FrmProdutos.pctboxProduto.Image = RedimensionarImagem(bm, New Size(156, novaAltura))
+        End If
+        FrmProdutos.cboTipoProduto.SelectedIndex = cboTipoProduto.FindStringExact(produtoDTO.CodigoTipoProduto)
+        FrmProdutos.cboCategoria.SelectedIndex = cboCategoria.FindStringExact(produtoDTO.CodigoCategoriaProduto)
+        FrmProdutos.IdMedidaProduto = produtoDTO.IdMedidaProduto
+
+        Dim medidaDTO As New MedidaDTO
+        medidaDTO.IdProdutoProduto = FrmProdutos.IdMedidaProduto
+        Dim medidaBLL As New MedidaBLL
+        medidaBLL.SelectMedida(medidaDTO)
+        FrmProdutos.txtUnidade.Text = medidaDTO.UnidadeMedidaEstoqueProduto
+        FrmProdutos.txtAltura.Text = medidaDTO.AlturaProduto
+        FrmProdutos.txtLargura.Text = medidaDTO.LarguraProduto
+        FrmProdutos.txtComprimento.Text = medidaDTO.ComprimentoProduto
+        FrmProdutos.txtPeso.Text = medidaDTO.PesoUnitarioProduto
+
+        Me.Close()
     End Sub
 
     'REDIMENSIONA IMAGEM PARA A PICTUREBOX

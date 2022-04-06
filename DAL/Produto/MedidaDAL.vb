@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class MedidaDAL
+
     Public Function IncluiMedida(medidaDTO As MedidaDTO) As ArrayList
         Dim conexao As New Conexao
         Dim retorno As ArrayList
@@ -138,4 +139,5 @@ Public Class MedidaDAL
             conexao.CloseConn()
         End Try
     End Function
+
 End Class

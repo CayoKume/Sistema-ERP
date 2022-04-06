@@ -230,7 +230,7 @@ Public Class FrmProdutos
         produtoDTO.EstoqueMaxProduto = EstoqueMaxProduto
         produtoDTO.EstoqueVinculadoProduto = EstoqueVinculadoProduto
         produtoDTO.EstoquePrevistoProduto = EstoquePrevistoProduto
-        produtoDTO.DescricaoProduto = DescricaoProduto
+        produtoDTO.DescricoesDetalhadasProduto = DescricaoDetalhadaProduto
         produtoDTO.ObservacoesProduto = ObservacoesProduto
         produtoDTO.CodigoTipoProduto = TipoProduto
         produtoDTO.CodigoCategoriaProduto = CategoriaProduto

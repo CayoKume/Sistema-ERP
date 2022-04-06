@@ -31,6 +31,7 @@ Partial Class FrmReferencias
         Me.pnlBotoes = New System.Windows.Forms.Panel()
         Me.btnCatalago = New System.Windows.Forms.Button()
         Me.pnlFormulario = New System.Windows.Forms.Panel()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         CType(Me.dgvResultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBotoes.SuspendLayout()
         Me.pnlFormulario.SuspendLayout()
@@ -48,6 +49,7 @@ Partial Class FrmReferencias
         '
         'txtReferencia
         '
+        Me.txtReferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtReferencia.Location = New System.Drawing.Point(98, 9)
         Me.txtReferencia.Name = "txtReferencia"
         Me.txtReferencia.Size = New System.Drawing.Size(179, 20)
@@ -66,6 +68,7 @@ Partial Class FrmReferencias
         'dgvResultados
         '
         Me.dgvResultados.AllowUserToAddRows = False
+        Me.dgvResultados.AllowUserToDeleteRows = False
         Me.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultados.Location = New System.Drawing.Point(13, 65)
         Me.dgvResultados.Name = "dgvResultados"
@@ -84,7 +87,7 @@ Partial Class FrmReferencias
         '
         'BtnVoltar
         '
-        Me.BtnVoltar.Location = New System.Drawing.Point(85, 1)
+        Me.BtnVoltar.Location = New System.Drawing.Point(163, 1)
         Me.BtnVoltar.Name = "BtnVoltar"
         Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
         Me.BtnVoltar.TabIndex = 1
@@ -93,11 +96,12 @@ Partial Class FrmReferencias
         '
         'pnlBotoes
         '
+        Me.pnlBotoes.Controls.Add(Me.BtnExcluir)
         Me.pnlBotoes.Controls.Add(Me.BtnVoltar)
         Me.pnlBotoes.Controls.Add(Me.BtnSalvar)
-        Me.pnlBotoes.Location = New System.Drawing.Point(151, 298)
+        Me.pnlBotoes.Location = New System.Drawing.Point(74, 301)
         Me.pnlBotoes.Name = "pnlBotoes"
-        Me.pnlBotoes.Size = New System.Drawing.Size(161, 24)
+        Me.pnlBotoes.Size = New System.Drawing.Size(238, 24)
         Me.pnlBotoes.TabIndex = 1
         Me.pnlBotoes.TabStop = True
         '
@@ -122,6 +126,15 @@ Partial Class FrmReferencias
         Me.pnlFormulario.Size = New System.Drawing.Size(328, 292)
         Me.pnlFormulario.TabIndex = 0
         Me.pnlFormulario.TabStop = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Location = New System.Drawing.Point(82, 1)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnExcluir.TabIndex = 2
+        Me.BtnExcluir.Text = "Excluir"
+        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'FrmReferencias
         '
@@ -151,4 +164,5 @@ Partial Class FrmReferencias
     Friend WithEvents pnlBotoes As Panel
     Friend WithEvents btnCatalago As Button
     Friend WithEvents pnlFormulario As Panel
+    Friend WithEvents BtnExcluir As Button
 End Class

@@ -44,8 +44,16 @@ Public Class ReferenciaBLL
         Return dt
     End Function
 
-    Public Function SelectReferencia(referenciaDTO As ReferenciaDTO) As ArrayList Implements IReferencia.SelectReferencia
-        Throw New NotImplementedException()
+    Public Function SelectReferencia(referenciaDTO As ReferenciaDTO) As List(Of ReferenciaDTO) Implements IReferencia.SelectReferencia
+        Dim retorno As List(Of ReferenciaDTO)
+        Dim referenciaDAL As New ReferenciaDAL
+        Try
+            retorno = referenciaDAL.SelecionaReferencia(referenciaDTO)
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+
+        Return retorno
     End Function
 
 End Class
