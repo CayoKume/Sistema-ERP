@@ -623,18 +623,30 @@ Public Class FrmProdutos
     End Sub
 
     Private Sub txtDescricao_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDescricao.KeyPress
-        If e.KeyChar = Chr(13) And (txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing) Then
-            PesquisarProduto()
-        Else
-            FrmBuscaProduto.Show()
+        If e.KeyChar = Chr(13) Then
+            If txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing Then
+                PesquisarProduto()
+            Else
+                FrmBuscaProduto.Show()
+            End If
         End If
     End Sub
 
     Private Sub txtReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtReferencia.KeyPress
-        If e.KeyChar = Chr(13) And (txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing) Then
-            PesquisarProduto()
-        Else
-            FrmBuscaProduto.Show()
+        If e.KeyChar = Chr(13) Then
+            If txtCodigo.Text <> Nothing Or txtDescricao.Text <> Nothing Or txtReferencia.Text <> Nothing Then
+                PesquisarProduto()
+            Else
+                FrmBuscaProduto.Show()
+            End If
+        End If
+    End Sub
+
+    'SETA TECLA ESC PARA SAIR DO FORMULÁRIO
+    Private Sub FrmProdutos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+            FrmPrincipal.Show()
         End If
     End Sub
 

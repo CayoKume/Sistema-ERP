@@ -124,6 +124,7 @@ Partial Class FrmEstoquePrevisto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(503, 403)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.Name = "FrmEstoquePrevisto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmEstoquePrevisto"

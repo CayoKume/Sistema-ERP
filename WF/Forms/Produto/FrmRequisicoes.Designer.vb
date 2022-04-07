@@ -472,6 +472,7 @@ Partial Class FrmRequisicoes
         Me.Controls.Add(Me.pnlProduto)
         Me.Controls.Add(Me.pnlRequisicao)
         Me.Controls.Add(Me.dgvRequisicoes)
+        Me.KeyPreview = True
         Me.Name = "FrmRequisicoes"
         Me.Text = "FrmRequisicoes"
         Me.pnlBotoes.ResumeLayout(False)

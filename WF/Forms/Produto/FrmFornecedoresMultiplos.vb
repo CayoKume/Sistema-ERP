@@ -1,13 +1,19 @@
 ﻿Public Class FrmFornecedoresMultiplos
-    Private Sub btnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
+#Region "ATRIBUTOS"
+
+#End Region
+
+#Region "BOTÕES"
+
+#End Region
+
+#Region "MÉTODOS"
+    Private Sub FrmFornecedoresMultiplos_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
     End Sub
+#End Region
 
-    Private Sub btnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
-        Me.Close()
-    End Sub
-
-    Private Sub btnCadastrarFornecedor_Click(sender As Object, e As EventArgs) Handles BtnCadastrarFornecedor.Click
-
-    End Sub
 End Class

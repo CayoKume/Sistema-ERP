@@ -51,6 +51,7 @@ Partial Class FrmConfiguraGridView
         Me.ClientSize = New System.Drawing.Size(419, 239)
         Me.Controls.Add(Me.BtnVoltar)
         Me.Controls.Add(Me.BtnSalvar)
+        Me.KeyPreview = True
         Me.Name = "FrmConfiguraGridView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmConfiguraGridView"

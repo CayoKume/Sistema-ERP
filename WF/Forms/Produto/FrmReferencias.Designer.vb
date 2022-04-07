@@ -144,6 +144,7 @@ Partial Class FrmReferencias
         Me.ClientSize = New System.Drawing.Size(331, 331)
         Me.Controls.Add(Me.pnlFormulario)
         Me.Controls.Add(Me.pnlBotoes)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmReferencias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

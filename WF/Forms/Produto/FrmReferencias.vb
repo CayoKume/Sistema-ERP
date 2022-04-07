@@ -160,6 +160,12 @@ Public Class FrmReferencias
         cboCatalago.SelectedIndex = -1
         dgvResultados.DataSource = Nothing
     End Sub
+
+    Private Sub FrmReferencias_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
 #End Region
 
 End Class

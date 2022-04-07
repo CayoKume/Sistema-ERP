@@ -360,6 +360,7 @@ Partial Class FrmMedidas
         Me.Controls.Add(Me.pnlUnidades)
         Me.Controls.Add(Me.pnlPesos)
         Me.Controls.Add(Me.pnlDimensoes)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmMedidas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -23,6 +23,10 @@ Partial Class FrmEtiquetas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlPrincipal = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnImprimir = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.BtnAdicionar = New System.Windows.Forms.Button()
@@ -35,10 +39,6 @@ Partial Class FrmEtiquetas
         Me.lblQuantidade = New System.Windows.Forms.Label()
         Me.lblProduto = New System.Windows.Forms.Label()
         Me.lblReferencia = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlPrincipal.SuspendLayout()
         CType(Me.dgvBuscaProdutos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,6 +65,42 @@ Partial Class FrmEtiquetas
         Me.pnlPrincipal.Name = "pnlPrincipal"
         Me.pnlPrincipal.Size = New System.Drawing.Size(629, 338)
         Me.pnlPrincipal.TabIndex = 1
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(511, 26)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(104, 21)
+        Me.ComboBox2.TabIndex = 47
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(401, 26)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(104, 21)
+        Me.ComboBox1.TabIndex = 46
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(508, 7)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(107, 16)
+        Me.Label2.TabIndex = 45
+        Me.Label2.Text = "Formato da Página"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(398, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(95, 16)
+        Me.Label1.TabIndex = 44
+        Me.Label1.Text = "Modelo Etiqueta"
         '
         'BtnImprimir
         '
@@ -168,48 +204,13 @@ Partial Class FrmEtiquetas
         Me.lblReferencia.TabIndex = 1
         Me.lblReferencia.Text = "Referência"
         '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(511, 26)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(104, 21)
-        Me.ComboBox2.TabIndex = 47
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(401, 26)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(104, 21)
-        Me.ComboBox1.TabIndex = 46
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(508, 7)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 16)
-        Me.Label2.TabIndex = 45
-        Me.Label2.Text = "Formato da Página"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(398, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 16)
-        Me.Label1.TabIndex = 44
-        Me.Label1.Text = "Modelo Etiqueta"
-        '
         'FrmEtiquetas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(627, 338)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.Name = "FrmEtiquetas"
         Me.Text = "FrmEtiquetas"
         Me.pnlPrincipal.ResumeLayout(False)

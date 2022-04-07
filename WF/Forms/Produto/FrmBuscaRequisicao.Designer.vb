@@ -25,11 +25,6 @@ Partial Class FrmBuscaRequisicao
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlPrincipal = New System.Windows.Forms.Panel()
-        Me.BtnLimpar = New System.Windows.Forms.Button()
-        Me.btnAprovar = New System.Windows.Forms.Button()
-        Me.btnPesquisar = New System.Windows.Forms.Button()
-        Me.btnVoltar = New System.Windows.Forms.Button()
-        Me.dgvBuscaRequisicao = New System.Windows.Forms.DataGridView()
         Me.pnlRequisicao = New System.Windows.Forms.Panel()
         Me.cboStatus = New System.Windows.Forms.ComboBox()
         Me.cboAtendidoPor = New System.Windows.Forms.ComboBox()
@@ -52,9 +47,14 @@ Partial Class FrmBuscaRequisicao
         Me.lblDataEmissao = New System.Windows.Forms.Label()
         Me.lblTipoRequisicao = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.btnAprovar = New System.Windows.Forms.Button()
+        Me.btnPesquisar = New System.Windows.Forms.Button()
+        Me.btnVoltar = New System.Windows.Forms.Button()
+        Me.dgvBuscaRequisicao = New System.Windows.Forms.DataGridView()
         Me.pnlPrincipal.SuspendLayout()
-        CType(Me.dgvBuscaRequisicao, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlRequisicao.SuspendLayout()
+        CType(Me.dgvBuscaRequisicao, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlPrincipal
@@ -69,62 +69,6 @@ Partial Class FrmBuscaRequisicao
         Me.pnlPrincipal.Name = "pnlPrincipal"
         Me.pnlPrincipal.Size = New System.Drawing.Size(464, 374)
         Me.pnlPrincipal.TabIndex = 1
-        '
-        'BtnLimpar
-        '
-        Me.BtnLimpar.Location = New System.Drawing.Point(296, 345)
-        Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpar.TabIndex = 45
-        Me.BtnLimpar.Text = "Limpar"
-        Me.BtnLimpar.UseVisualStyleBackColor = True
-        '
-        'btnAprovar
-        '
-        Me.btnAprovar.Location = New System.Drawing.Point(12, 345)
-        Me.btnAprovar.Name = "btnAprovar"
-        Me.btnAprovar.Size = New System.Drawing.Size(55, 23)
-        Me.btnAprovar.TabIndex = 2
-        Me.btnAprovar.Text = "Aprovar"
-        Me.btnAprovar.UseVisualStyleBackColor = True
-        '
-        'btnPesquisar
-        '
-        Me.btnPesquisar.Location = New System.Drawing.Point(215, 345)
-        Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(75, 23)
-        Me.btnPesquisar.TabIndex = 3
-        Me.btnPesquisar.Text = "Pesquisar"
-        Me.btnPesquisar.UseVisualStyleBackColor = True
-        '
-        'btnVoltar
-        '
-        Me.btnVoltar.Location = New System.Drawing.Point(377, 345)
-        Me.btnVoltar.Name = "btnVoltar"
-        Me.btnVoltar.Size = New System.Drawing.Size(75, 23)
-        Me.btnVoltar.TabIndex = 4
-        Me.btnVoltar.Text = "Voltar"
-        Me.btnVoltar.UseVisualStyleBackColor = True
-        '
-        'dgvBuscaRequisicao
-        '
-        Me.dgvBuscaRequisicao.AllowUserToAddRows = False
-        Me.dgvBuscaRequisicao.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBuscaRequisicao.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvBuscaRequisicao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBuscaRequisicao.Location = New System.Drawing.Point(12, 167)
-        Me.dgvBuscaRequisicao.Name = "dgvBuscaRequisicao"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgvBuscaRequisicao.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvBuscaRequisicao.Size = New System.Drawing.Size(440, 172)
-        Me.dgvBuscaRequisicao.TabIndex = 37
         '
         'pnlRequisicao
         '
@@ -325,18 +269,75 @@ Partial Class FrmBuscaRequisicao
         Me.lblCodigo.TabIndex = 1
         Me.lblCodigo.Text = "Código"
         '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.Location = New System.Drawing.Point(296, 345)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpar.TabIndex = 45
+        Me.BtnLimpar.Text = "Limpar"
+        Me.BtnLimpar.UseVisualStyleBackColor = True
+        '
+        'btnAprovar
+        '
+        Me.btnAprovar.Location = New System.Drawing.Point(12, 345)
+        Me.btnAprovar.Name = "btnAprovar"
+        Me.btnAprovar.Size = New System.Drawing.Size(55, 23)
+        Me.btnAprovar.TabIndex = 2
+        Me.btnAprovar.Text = "Aprovar"
+        Me.btnAprovar.UseVisualStyleBackColor = True
+        '
+        'btnPesquisar
+        '
+        Me.btnPesquisar.Location = New System.Drawing.Point(215, 345)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(75, 23)
+        Me.btnPesquisar.TabIndex = 3
+        Me.btnPesquisar.Text = "Pesquisar"
+        Me.btnPesquisar.UseVisualStyleBackColor = True
+        '
+        'btnVoltar
+        '
+        Me.btnVoltar.Location = New System.Drawing.Point(377, 345)
+        Me.btnVoltar.Name = "btnVoltar"
+        Me.btnVoltar.Size = New System.Drawing.Size(75, 23)
+        Me.btnVoltar.TabIndex = 4
+        Me.btnVoltar.Text = "Voltar"
+        Me.btnVoltar.UseVisualStyleBackColor = True
+        '
+        'dgvBuscaRequisicao
+        '
+        Me.dgvBuscaRequisicao.AllowUserToAddRows = False
+        Me.dgvBuscaRequisicao.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBuscaRequisicao.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBuscaRequisicao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBuscaRequisicao.Location = New System.Drawing.Point(12, 167)
+        Me.dgvBuscaRequisicao.Name = "dgvBuscaRequisicao"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvBuscaRequisicao.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBuscaRequisicao.Size = New System.Drawing.Size(440, 172)
+        Me.dgvBuscaRequisicao.TabIndex = 37
+        '
         'FrmBuscaRequisicao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(464, 374)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.Name = "FrmBuscaRequisicao"
         Me.Text = "FrmBuscaRequisicao"
         Me.pnlPrincipal.ResumeLayout(False)
-        CType(Me.dgvBuscaRequisicao, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRequisicao.ResumeLayout(False)
         Me.pnlRequisicao.PerformLayout()
+        CType(Me.dgvBuscaRequisicao, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

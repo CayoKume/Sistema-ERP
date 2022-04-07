@@ -97,6 +97,12 @@
     <Compile Include="Forms\Produto\FrmConfiguraGridView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Produto\FrmConfiguraRelatorio.Designer.vb">
+      <DependentUpon>FrmConfiguraRelatorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmConfiguraRelatorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Produto\FrmEtiquetas.Designer.vb">
       <DependentUpon>FrmEtiquetas.vb</DependentUpon>
     </Compile>
@@ -107,6 +113,12 @@
       <DependentUpon>FrmConfiguraEtiquetas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Produto\FrmConfiguraEtiquetas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmRelatorios.Designer.vb">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Produto\FrmRelatorios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Produto\FrmRequisicoes.Designer.vb">
@@ -209,8 +221,14 @@
     <EmbeddedResource Include="Forms\Produto\FrmConfiguraGridView.resx">
       <DependentUpon>FrmConfiguraGridView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produto\FrmConfiguraRelatorio.resx">
+      <DependentUpon>FrmConfiguraRelatorio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmEtiquetas.resx">
       <DependentUpon>FrmEtiquetas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produto\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produto\FrmRequisicoes.resx">
       <DependentUpon>FrmRequisicoes.vb</DependentUpon>

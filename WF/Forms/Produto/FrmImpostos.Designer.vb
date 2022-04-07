@@ -541,6 +541,7 @@ Partial Class FrmImpostos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(605, 433)
         Me.Controls.Add(Me.Panel1)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmImpostos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

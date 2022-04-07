@@ -105,6 +105,7 @@ Partial Class FrmConfiguraCbo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(312, 75)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmConfiguraCbo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

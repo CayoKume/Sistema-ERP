@@ -23,6 +23,13 @@ Partial Class FrmServicos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlProdutos = New System.Windows.Forms.Panel()
+        Me.pnlBotoes = New System.Windows.Forms.Panel()
+        Me.BtnPesquisar = New System.Windows.Forms.Button()
+        Me.BtnImprimir = New System.Windows.Forms.Button()
+        Me.BtnVoltar = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.lboObservacoes = New System.Windows.Forms.Label()
         Me.lboDescricaoDetalhada = New System.Windows.Forms.Label()
@@ -59,19 +66,12 @@ Partial Class FrmServicos
         Me.MedidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpostosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelacionamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pnlBotoes = New System.Windows.Forms.Panel()
-        Me.BtnPesquisar = New System.Windows.Forms.Button()
-        Me.BtnImprimir = New System.Windows.Forms.Button()
-        Me.BtnVoltar = New System.Windows.Forms.Button()
-        Me.BtnLimpar = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.pnlProdutos.SuspendLayout()
+        Me.pnlBotoes.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.pnlBotoes.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlProdutos
@@ -84,6 +84,73 @@ Partial Class FrmServicos
         Me.pnlProdutos.Name = "pnlProdutos"
         Me.pnlProdutos.Size = New System.Drawing.Size(783, 387)
         Me.pnlProdutos.TabIndex = 57
+        '
+        'pnlBotoes
+        '
+        Me.pnlBotoes.Controls.Add(Me.BtnPesquisar)
+        Me.pnlBotoes.Controls.Add(Me.BtnImprimir)
+        Me.pnlBotoes.Controls.Add(Me.BtnVoltar)
+        Me.pnlBotoes.Controls.Add(Me.BtnLimpar)
+        Me.pnlBotoes.Controls.Add(Me.BtnExcluir)
+        Me.pnlBotoes.Controls.Add(Me.BtnSalvar)
+        Me.pnlBotoes.Location = New System.Drawing.Point(136, 342)
+        Me.pnlBotoes.Name = "pnlBotoes"
+        Me.pnlBotoes.Size = New System.Drawing.Size(487, 28)
+        Me.pnlBotoes.TabIndex = 56
+        '
+        'BtnPesquisar
+        '
+        Me.BtnPesquisar.Location = New System.Drawing.Point(165, 3)
+        Me.BtnPesquisar.Name = "BtnPesquisar"
+        Me.BtnPesquisar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnPesquisar.TabIndex = 54
+        Me.BtnPesquisar.Text = "Pesquisar"
+        Me.BtnPesquisar.UseVisualStyleBackColor = True
+        '
+        'BtnImprimir
+        '
+        Me.BtnImprimir.Location = New System.Drawing.Point(327, 3)
+        Me.BtnImprimir.Name = "BtnImprimir"
+        Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnImprimir.TabIndex = 53
+        Me.BtnImprimir.Text = "Imprimir"
+        Me.BtnImprimir.UseVisualStyleBackColor = True
+        '
+        'BtnVoltar
+        '
+        Me.BtnVoltar.Location = New System.Drawing.Point(408, 3)
+        Me.BtnVoltar.Name = "BtnVoltar"
+        Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnVoltar.TabIndex = 52
+        Me.BtnVoltar.Text = "Voltar"
+        Me.BtnVoltar.UseVisualStyleBackColor = True
+        '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.Location = New System.Drawing.Point(246, 3)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpar.TabIndex = 51
+        Me.BtnLimpar.Text = "Limpar"
+        Me.BtnLimpar.UseVisualStyleBackColor = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.Location = New System.Drawing.Point(84, 3)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnExcluir.TabIndex = 49
+        Me.BtnExcluir.Text = "Excluir"
+        Me.BtnExcluir.UseVisualStyleBackColor = True
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.Location = New System.Drawing.Point(3, 3)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSalvar.TabIndex = 48
+        Me.BtnSalvar.Text = "Salvar"
+        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'Panel6
         '
@@ -402,73 +469,6 @@ Partial Class FrmServicos
         Me.RelacionamentosToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
         Me.RelacionamentosToolStripMenuItem.Text = "Relacionamentos"
         '
-        'pnlBotoes
-        '
-        Me.pnlBotoes.Controls.Add(Me.BtnPesquisar)
-        Me.pnlBotoes.Controls.Add(Me.BtnImprimir)
-        Me.pnlBotoes.Controls.Add(Me.BtnVoltar)
-        Me.pnlBotoes.Controls.Add(Me.BtnLimpar)
-        Me.pnlBotoes.Controls.Add(Me.BtnExcluir)
-        Me.pnlBotoes.Controls.Add(Me.BtnSalvar)
-        Me.pnlBotoes.Location = New System.Drawing.Point(136, 342)
-        Me.pnlBotoes.Name = "pnlBotoes"
-        Me.pnlBotoes.Size = New System.Drawing.Size(487, 28)
-        Me.pnlBotoes.TabIndex = 56
-        '
-        'BtnPesquisar
-        '
-        Me.BtnPesquisar.Location = New System.Drawing.Point(165, 3)
-        Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnPesquisar.TabIndex = 54
-        Me.BtnPesquisar.Text = "Pesquisar"
-        Me.BtnPesquisar.UseVisualStyleBackColor = True
-        '
-        'BtnImprimir
-        '
-        Me.BtnImprimir.Location = New System.Drawing.Point(327, 3)
-        Me.BtnImprimir.Name = "BtnImprimir"
-        Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnImprimir.TabIndex = 53
-        Me.BtnImprimir.Text = "Imprimir"
-        Me.BtnImprimir.UseVisualStyleBackColor = True
-        '
-        'BtnVoltar
-        '
-        Me.BtnVoltar.Location = New System.Drawing.Point(408, 3)
-        Me.BtnVoltar.Name = "BtnVoltar"
-        Me.BtnVoltar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnVoltar.TabIndex = 52
-        Me.BtnVoltar.Text = "Voltar"
-        Me.BtnVoltar.UseVisualStyleBackColor = True
-        '
-        'BtnLimpar
-        '
-        Me.BtnLimpar.Location = New System.Drawing.Point(246, 3)
-        Me.BtnLimpar.Name = "BtnLimpar"
-        Me.BtnLimpar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpar.TabIndex = 51
-        Me.BtnLimpar.Text = "Limpar"
-        Me.BtnLimpar.UseVisualStyleBackColor = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.Location = New System.Drawing.Point(84, 3)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnExcluir.TabIndex = 49
-        Me.BtnExcluir.Text = "Excluir"
-        Me.BtnExcluir.UseVisualStyleBackColor = True
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.Location = New System.Drawing.Point(3, 3)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnSalvar.TabIndex = 48
-        Me.BtnSalvar.Text = "Salvar"
-        Me.BtnSalvar.UseVisualStyleBackColor = True
-        '
         'FrmServicos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -476,10 +476,12 @@ Partial Class FrmServicos
         Me.ClientSize = New System.Drawing.Size(790, 418)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.pnlProdutos)
+        Me.KeyPreview = True
         Me.Name = "FrmServicos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Servicos"
         Me.pnlProdutos.ResumeLayout(False)
+        Me.pnlBotoes.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -488,7 +490,6 @@ Partial Class FrmServicos
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.pnlBotoes.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

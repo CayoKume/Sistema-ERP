@@ -917,6 +917,7 @@ Partial Class FrmProdutos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(876, 560)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.Menu
         Me.Name = "FrmProdutos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

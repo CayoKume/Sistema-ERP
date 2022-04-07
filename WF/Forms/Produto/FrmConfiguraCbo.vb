@@ -245,6 +245,12 @@ Public Class FrmConfiguraCbo
             End If
         End If
     End Sub
+
+    Private Sub FrmConfiguraCbo_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
 #End Region
 
 End Class

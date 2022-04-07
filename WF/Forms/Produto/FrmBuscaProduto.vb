@@ -418,6 +418,12 @@ Public Class FrmBuscaProduto
     Private Function RedimensionarImagem(imagem As Image, tamanho As Size) As Image
         Return New Bitmap(imagem, tamanho)
     End Function
+
+    Private Sub FrmBuscaProduto_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
 #End Region
 
 End Class

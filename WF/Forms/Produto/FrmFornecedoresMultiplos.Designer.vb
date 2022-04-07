@@ -151,6 +151,7 @@ Partial Class FrmFornecedoresMultiplos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(308, 168)
         Me.Controls.Add(Me.Panel1)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmFornecedoresMultiplos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -317,6 +317,7 @@ Partial Class FrmBuscaProduto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(626, 442)
         Me.Controls.Add(Me.pnlPrincipal)
+        Me.KeyPreview = True
         Me.Name = "FrmBuscaProduto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBuscaProduto"
