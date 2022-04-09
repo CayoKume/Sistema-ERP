@@ -316,10 +316,10 @@ Public Class FrmProdutos
             rdoProdutoAcabado.Checked = True
         End If
         cboStatus.SelectedIndex = cboStatus.FindStringExact(produtoDTO.StatusProduto)
-        txtPrecoCompra.Text = produtoDTO.PrecoCompraProduto
-        txtCompraImposto.Text = produtoDTO.CompraImpostoProduto
+        txtPrecoCompra.Text = CDec(produtoDTO.PrecoCompraProduto).ToString("R$ #,###.00")
+        txtCompraImposto.Text = CDec(produtoDTO.CompraImpostoProduto).ToString("R$ #,###.00")
         cboMargemLucro.Text = produtoDTO.MargemLucroProduto
-        txtPrecoVenda.Text = produtoDTO.PrecoVendaProduto
+        txtPrecoVenda.Text = CDec(produtoDTO.PrecoVendaProduto).ToString("R$ #,###.00")
         txtEstoqueDisponivel.Text = produtoDTO.EstoqueDisponivelProduto
         txtEstoqueMin.Text = produtoDTO.EstoqueMinProduto
         txtEstoqueMax.Text = produtoDTO.EstoqueMaxProduto
@@ -392,7 +392,7 @@ Public Class FrmProdutos
         Dim br As BinaryReader
 
         For Each elemento In Vetor
-            lista.Add(Trim(elemento.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", "")))
+            lista.Add(Trim(elemento.Replace("|", "").Replace("\", "").Replace("/", "").Replace("""", "").Replace("'", "").Replace("!", "").Replace("@", "").Replace("#", "").Replace("R$", "").Replace("%", "").Replace("¨", "").Replace("&", "").Replace("*", "").Replace("(", "").Replace(")", "").Replace("<", "").Replace(">", "").Replace(":", "").Replace(";", "").Replace("}", "").Replace("{", "").Replace("_", "").Replace("-", "").Replace("+", "").Replace("=", "").Replace("$", "").Replace(",00", "")))
         Next
         NewVetor = lista.ToArray()
 
@@ -452,37 +452,42 @@ Public Class FrmProdutos
             MargemLucroProduto = Nothing
         End If
         If NewVetor(12) <> "" Then
-            EstoqueDisponivelProduto = Decimal.Parse(NewVetor(12))
+            PrecoVendaProduto = Decimal.Parse(NewVetor(12))
+        Else
+            PrecoVendaProduto = Nothing
+        End If
+        If NewVetor(13) <> "" Then
+            EstoqueDisponivelProduto = Decimal.Parse(NewVetor(13))
         Else
             EstoqueDisponivelProduto = Nothing
         End If
-        If NewVetor(13) <> "" Then
-            EstoqueMinProduto = Decimal.Parse(NewVetor(13))
+        If NewVetor(14) <> "" Then
+            EstoqueMinProduto = Decimal.Parse(NewVetor(14))
         Else
             EstoqueMinProduto = Nothing
         End If
-        If NewVetor(14) <> "" Then
-            EstoqueMaxProduto = Decimal.Parse(NewVetor(14))
+        If NewVetor(15) <> "" Then
+            EstoqueMaxProduto = Decimal.Parse(NewVetor(15))
         Else
             EstoqueMaxProduto = Nothing
         End If
-        If NewVetor(15) <> "" Then
-            EstoqueVinculadoProduto = Decimal.Parse(NewVetor(15))
+        If NewVetor(16) <> "" Then
+            EstoqueVinculadoProduto = Decimal.Parse(NewVetor(16))
         Else
             EstoqueVinculadoProduto = Nothing
         End If
-        If NewVetor(16) <> "" Then
-            EstoquePrevistoProduto = Decimal.Parse(NewVetor(16))
+        If NewVetor(17) <> "" Then
+            EstoquePrevistoProduto = Decimal.Parse(NewVetor(17))
         Else
             EstoquePrevistoProduto = Nothing
         End If
-        If NewVetor(17) <> "" Then
-            DescricaoDetalhadaProduto = NewVetor(17)
+        If NewVetor(18) <> "" Then
+            DescricaoDetalhadaProduto = NewVetor(18)
         Else
             DescricaoDetalhadaProduto = Nothing
         End If
-        If NewVetor(18) <> "" Then
-            ObservacoesProduto = NewVetor(18)
+        If NewVetor(19) <> "" Then
+            ObservacoesProduto = NewVetor(19)
         Else
             ObservacoesProduto = Nothing
         End If
