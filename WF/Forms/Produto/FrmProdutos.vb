@@ -113,6 +113,32 @@ Public Class FrmProdutos
         Me.Close()
         FrmPrincipal.Show()
     End Sub
+
+    Private Sub BtnImprimir_Click(sender As Object, e As EventArgs) Handles BtnImprimir.Click
+        If txtCodigo.Text <> Nothing And txtDescricao.Text <> Nothing And txtReferencia.Text <> Nothing Then
+            TrataVariavel()
+            Dim produtoDTO As New ProdutoDTO
+            produtoDTO.IdProduto = IdProduto
+            produtoDTO.DescricaoProduto = DescricaoProduto
+            produtoDTO.ClasseProduto = ClasseProduto
+            produtoDTO.StatusProduto = StatusProduto
+            produtoDTO.PrecoCompraProduto = PrecoCompraProduto
+            produtoDTO.CompraImpostoProduto = CompraImpostoProduto
+            produtoDTO.MargemLucroProduto = MargemLucroProduto
+            produtoDTO.PrecoVendaProduto = PrecoVendaProduto
+            produtoDTO.EstoqueDisponivelProduto = EstoqueDisponivelProduto
+            produtoDTO.EstoqueMinProduto = EstoqueMinProduto
+            produtoDTO.EstoqueMaxProduto = EstoqueMaxProduto
+            produtoDTO.EstoqueVinculadoProduto = EstoqueVinculadoProduto
+            produtoDTO.EstoquePrevistoProduto = EstoquePrevistoProduto
+            produtoDTO.DescricoesDetalhadasProduto = DescricaoDetalhadaProduto
+            produtoDTO.ObservacoesProduto = ObservacoesProduto
+            produtoDTO.CodigoTipoProduto = TipoProduto
+            produtoDTO.CodigoCategoriaProduto = CategoriaProduto
+            produtoDTO.ImagemProduto = Imagem
+            FrmExibeProduto.Show(ProdutoDTO)
+        End If
+    End Sub
 #End Region
 
 #End Region
@@ -235,7 +261,6 @@ Public Class FrmProdutos
         produtoDTO.CodigoTipoProduto = TipoProduto
         produtoDTO.CodigoCategoriaProduto = CategoriaProduto
         produtoDTO.ImagemProduto = Imagem
-
         If Trim(txtDescricao.Text) <> Nothing And Trim(txtCodigo.Text) = Nothing Then
             Dim medidaBLL As New MedidaBLL
             Dim medidaDTO As New MedidaDTO
@@ -259,11 +284,11 @@ Public Class FrmProdutos
                 MessageBox.Show(ex.Message)
             End Try
 
-            produtoDTO.IdMedidaProduto = IdMedidaProduto
+            ProdutoDTO.IdMedidaProduto = IdMedidaProduto
 
             Dim produtoBLL As New ProdutoBLL
             Try
-                If produtoBLL.InsertProduto(produtoDTO)(1) = True Then
+                If produtoBLL.InsertProduto(ProdutoDTO)(1) = True Then
                     MessageBox.Show("Produto cadastrado com sucesso!")
                 Else
                     MessageBox.Show("Problema ao cadastrar produto !")
@@ -274,7 +299,7 @@ Public Class FrmProdutos
         ElseIf Trim(txtDescricao.Text) <> Nothing And Trim(txtCodigo.Text) <> Nothing Then
             Dim produtoBLL As New ProdutoBLL
             Try
-                If produtoBLL.UpdateProduto(produtoDTO)(1) = True Then
+                If produtoBLL.UpdateProduto(ProdutoDTO)(1) = True Then
                     MessageBox.Show("Produto atualizado com sucesso!")
                 Else
                     MessageBox.Show("Problema ao atualizar produto!")
